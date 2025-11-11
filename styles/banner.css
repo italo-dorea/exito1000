@@ -54,13 +54,47 @@
     color: #fff;
     font-size: 1.3rem;
     width: fit-content;
-    padding-inline: 60px;
-    padding-block: 20px;
+    padding-inline: 55px;
+    padding-block: 18px;
     border-radius: 60px;
     border: none;
     cursor: pointer;
     font-weight: 700;
 }
+
+/* avaliação estrelas */
+.avaliacao-container {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+.avatars {
+    width: 8rem;
+}
+
+.avaliacao-container h4 {
+    color: #1E1E23;
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
+.content-starts {
+    display: flex;
+    flex-direction: column;
+    gap: 0rem
+}
+
+.content-starts p {
+    display: flex;
+    flex-direction: row;
+    gap: 0.3rem;
+    color: #63636E;
+    font-size: 0.8rem;
+    font-weight: 400;
+}
+
+
 
 /* galeria alunos */
 
