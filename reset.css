@@ -1,0 +1,68 @@
+/* 1. Box sizing global */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remover margens padrões chatas */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* 3. Altura mínima e tipografia base */
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-family: 'Montserrat', 'Inter', sans-serif;
+  font-weight: 100;
+}
+
+/* 4. Imagens responsivas */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* 5. Inputs e botões herdando fonte */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 6. Links sem sublinhado padrão (ajuste se quiser) */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 7. Remover animações padrões */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
