@@ -4,6 +4,10 @@
     flex-direction: row;
     justify-content: space-between;
     gap: 0px;
+    background-image: url("../assets/bg-banner.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 .container-banner {
@@ -140,6 +144,8 @@
 /* foto vertical de cima na direita */
 .foto-vertical {
     flex: 1.1;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
     /* um tiquinho maior */
 }
 
@@ -153,4 +159,6 @@
 
 .foto-menor2 {
     flex: 0.4;
+     border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
 }
