@@ -82,8 +82,8 @@
   border-radius: 20px;
   background: #F26800;
   color: #fff;
-  font-weight: 300;
- margin-top: -0.8rem;
+  font-weight: 400;
+  margin-top: -0.8rem;
 
 }
 
@@ -104,4 +104,31 @@
   border: 4px solid #6AC4FF;
   border-radius: 20px;
   box-shadow: 5px 5px 5px 0px rgba(12, 12, 12, 0.75);
+}
+
+.faixa-container {
+  padding-block: 2rem;
+  min-width: 102svw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.faixa {
+  background: radial-gradient(
+    circle at center,   /* formato e posição do “brilho” */
+    #F26800 50%,         /* cor bem clara no centro */         /* cor bem clara no centro */
+    #ff9300 90%,        /* meio */
+    #ff7a00 100%        /* bordas mais escuras */
+  );  color: white;
+  padding: 20px 25px;
+  font-size: 20px;
+  font-weight: 500;
+  width: 100%;
+  margin-left: -2rem;
+  text-align: center;
+  /* INCLINAÇÃO */
+  transform: rotate(-3deg); /* ajuste o ângulo */
+  display: inline-block; /* necessário para rotacionar direitinho */
 }
