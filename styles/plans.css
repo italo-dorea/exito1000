@@ -1,13 +1,53 @@
 .plans-container {
     padding-inline: 10%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     gap: 0px;
     background-image: url("../assets/bg-plans.webp");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
-    min-height: 100vh;
     margin-top: -2.5rem;
+    padding-top: 4rem;
+    align-items: center;
+}
+
+.plans-title-metodo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0px;
+  justify-content: center;
+  padding-block: 2rem;
+}
+
+.plans-metodo-title {
+  font-family: "kalam", sans-serif;
+  font-size: 2rem;
+  font-weight: 300;
+  color: #fff;
+}
+
+.plans-title-description {
+  background: linear-gradient(to bottom, #fff 0%, #FFEAA6 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+  font-size: 3.5rem;
+  margin-top: -1rem;
+}
+
+.plans-glow-line {
+  border: none;
+  height: 10px;
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 20px;
+
+  background: radial-gradient(ellipse at center,
+      #FFB46A 0%,
+      #FFB46A 30%,
+      #ffb56a1b 80%);
 }
