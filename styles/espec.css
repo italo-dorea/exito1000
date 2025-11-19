@@ -1,0 +1,105 @@
+.especialista-container {
+  display: flex;
+  flex-direction: row;
+  align-items: top;
+  justify-content: left;
+  align-items: bottom;
+  padding-left: 10%;
+  padding-top: 4rem;
+  overflow-x: hidden;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.espec-left {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 50%;
+  align-items: left;
+}
+
+.espec-left h5 {
+  font-family: "kalam", sans-serif;
+  font-size: 2rem;
+  font-weight: 300;
+  color: #FFF;
+}
+
+.espec-left h3 {
+    background: linear-gradient(to bottom, #fff 0%, #6BC5FF 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+  font-size: 3.3rem;
+  line-height: 4rem;
+}
+
+.black-letter {
+  background: #101720;
+  -webkit-background-clip: text;
+  -webkit-text-stroke: 1px #F26800;
+  background-clip: text;
+  color: transparent;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+.white-letter {
+   background: #F8F8FF;
+  -webkit-background-clip: text;
+  -webkit-text-stroke: 1px #F26800;
+  background-clip: text;
+  color: transparent;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+.paragraph-white {
+  background: #F8F8FF;
+  -webkit-background-clip: text;
+  -webkit-text-stroke: 0.4px #F26800;
+  background-clip: text;
+  color: transparent;
+  font-weight: 600;
+  font-size: 1.4rem;
+  text-align: justify;
+  width: 90%;
+  
+}
+
+.espec-right {
+  position: relative; 
+  width: 50%;
+}
+
+.espec-right img {
+  min-width: 113%;
+  margin-bottom: 0;
+  height: auto;
+}
+
+
+/* faixa branca */
+
+.faixa-container-branca {
+  min-width: 102svw;
+  display: flex;
+  flex-direction: column;
+  align-items: top;
+  justify-content: center;
+  margin-top: -2.5rem;
+}
+
+.faixa-branca {
+  background: #CCEBFF;
+  color: #1E1E23;
+  padding: 25px 25px;
+  font-size: 20px;
+  font-weight: 500;
+  width: 100%;
+  margin-left: -2rem;
+  text-align: center;
+  /* INCLINAÇÃO */
+  transform: rotate(3deg); /* ajuste o ângulo */
+  display: inline-block; /* necessário para rotacionar direitinho */
+}
