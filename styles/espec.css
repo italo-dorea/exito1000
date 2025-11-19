@@ -9,6 +9,17 @@
   overflow-x: hidden;
   /* font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
 }
+
+.checked {
+    position: absolute;
+    z-index: 1;
+    max-width: 345px;
+    width: auto;
+    margin-top: -1rem;
+    margin-left: -2rem;
+    
+}
+
 .espec-left {
   display: flex;
   flex-direction: column;
