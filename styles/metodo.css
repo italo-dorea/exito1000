@@ -50,7 +50,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content:space-evenly;
+  justify-content: space-evenly;
   gap: 2rem;
   padding-block: 2rem;
   padding-inline: 10%;
@@ -65,8 +65,17 @@
   gap: 1rem;
 }
 
+.card-metodo-prof {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding-bottom: 2rem;
+}
 
-.card-metodo h4 {
+.card-metodo h4,
+.card-metodo-prof h4 {
   text-align: center;
   color: #fff;
   font-size: 1.1rem;
