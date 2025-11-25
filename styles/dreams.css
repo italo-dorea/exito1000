@@ -1,0 +1,71 @@
+.dreams-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 0px;
+    min-height: 100vh;
+}
+
+.left-dreams {
+    width: 60%;
+    background-image: url("../assets/bg-paper.webp");
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: right;
+    justify-content: center;
+    padding-left: 10%;
+}
+
+.title-left-dreams {
+    color: #0062A1;
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.left-dreams p {
+    color: #00335B;
+    font-size: 2rem;
+    font-weight: 500;
+    font-family: kalam, sans-serif;
+}
+
+.btn-dreams {
+  background-color: #F26800;
+  color: #fff;
+  font-size: 1.2rem;
+  width: fit-content;
+  padding-inline: 120px;
+  padding-block: 15px;
+  border-radius: 60px;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  margin-top: 2rem;
+}
+
+.checked-dream {
+    position: absolute;
+    z-index: 1;
+    min-width: 400px;
+    width: auto;
+    margin-left: 13rem;
+    margin-top: -1rem;
+    
+}
+
+.right-dreams {
+    width: 40%;
+    background-image: url("../assets/alunos/aluna.webp");
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
