@@ -162,3 +162,115 @@
      border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
 }
+
+@media (max-width: 768px) {
+  .section-banner {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+    padding-inline: 1.5rem;
+    padding-block: 3rem 2rem;
+    background-position: top center;
+  }
+
+  .container-banner {
+    width: 100%;
+    padding-block: 0;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .hero-title {
+    font-size: 2.4rem;
+    line-height: 1.2;
+  }
+
+  /* Se quiser esconder o flash no mobile */
+  .flash {
+    display: none;
+  }
+
+  .container-banner h2 {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  .container-banner button {
+    width: 100%;
+    justify-content: center;
+    font-size: 0.8rem;
+    padding-block: 14px;
+  }
+
+  /* avaliação estrelas */
+  .avaliacao-container {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .avatars {
+    width: 5.5rem;
+  }
+
+  .content-starts {
+    align-items: flex-start;
+  }
+
+  .content-starts h4 {
+    font-size: 0.95rem;
+  }
+
+  .content-starts p {
+    font-size: 0.75rem;
+  }
+
+  /* galeria alunos */
+  .galeria-alunos {
+    width: 100%;
+    max-width: 420px;
+    align-self: center;
+  }
+
+  .galeria-col {
+    gap: 0.4rem;
+  }
+
+  .linha-baixo {
+    flex: 1;
+  }
+
+  .foto {
+    border-radius: 10px;
+  }
+
+  .foto-grande,
+  .foto-vertical,
+  .foto-menor,
+  .foto-menor2 {
+    border-radius: 10px;
+  }
+}
+
+/* opcional: ajuste extra para telas bem pequenas */
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .container-banner h2 {
+    font-size: 0.9rem;
+  }
+
+  .avaliacao-container {
+    flex-direction: column;
+  }
+
+  .content-starts {
+    align-items: center;
+    text-align: center;
+  }
+}

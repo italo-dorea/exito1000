@@ -4,6 +4,9 @@
 
 html {
   box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 *,
@@ -29,3 +32,4 @@ button:hover {
   transform: scale(1.02);
   transition: ease-in 0.2s;
 }
+

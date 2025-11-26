@@ -125,3 +125,34 @@
   transform: rotate(3deg); /* ajuste o ângulo */
   display: inline-block; /* necessário para rotacionar direitinho */
 }
+
+@media (max-width: 768px) {
+
+  .especialista-container {
+    flex-direction: column-reverse;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 3rem;
+    align-items: center;
+    text-align: center;
+  }
+
+  .espec-left {
+    max-width: 100%;
+  }
+
+  .paragraph-white {
+    text-align: left;
+  }
+
+  .faixa-container,
+  .faixa-container-branca {
+    padding-inline: 1.5rem;
+  }
+
+  .faixa,
+  .faixa-branca {
+    margin-left: 0;
+    transform: rotate(0deg);
+  }
+}

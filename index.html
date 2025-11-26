@@ -20,18 +20,24 @@
 </head>
 
 <body>
-    <header>
-        <img src="./assets/logo.svg" alt="Logo Exito 1000" />
-        <nav>
+    <header class="header">
+        <img src="./assets/logo.svg" alt="Logo Exito 1000" class="logo-header" />
+        <!-- Navegação desktop -->
+        <nav class="nav-desktop">
             <ul>
                 <li><a href="#metodo">Método</a></li>
                 <li><a href="#professor">Sobre o Matheus</a></li>
                 <li><a href="#planos">Planos</a></li>
             </ul>
         </nav>
-        <a href="https://plataforma.redacaoexito1000.com.br/student/login" target="_blank">
+        <!-- Botão desktop -->
+        <a href="https://plataforma.redacaoexito1000.com.br/student/login" target="_blank" class="btn-area-aluno">
             <button>Área do Aluno</button>
         </a>
+        <!-- Ícone hambúrguer (mobile) -->
+        <button class="menu-toggle" aria-label="Abrir menu">
+            <img src="./assets/icon/icon-menu.svg" alt="Menu" />
+        </button>
     </header>
     <main>
         <section class="section-banner">

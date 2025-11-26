@@ -160,3 +160,32 @@
   margin-left: 14svw;
   margin-top: 5rem;
 }
+
+@media (max-width: 768px) {
+
+  .plans-container {
+    padding-inline: 1.5rem;
+    margin-top: 0;
+    padding-top: 3rem;
+    background-position: top center;
+  }
+
+  .container-plains-cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .plan-1,
+  .plan-2 {
+    width: 100%;
+    max-width: 420px;
+  }
+
+  .selo {
+    position: static;
+    margin: 0 auto 1rem auto;
+    display: block;
+    width: 7rem;
+  }
+}

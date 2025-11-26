@@ -141,3 +141,34 @@
   transform: rotate(-3deg); /* ajuste o ângulo */
   display: inline-block; /* necessário para rotacionar direitinho */
 }
+
+@media (max-width: 768px) {
+
+  .section-metodo {
+    padding-inline: 1.5rem;
+    background-position: top center;
+  }
+
+  .cards-metodos {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .card-metodo {
+    width: 100%;
+    max-width: 420px;
+  }
+
+  .card-metodo-prof {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-inline: 0;
+    gap: 1.5rem;
+  }
+
+  .card-span {
+    text-align: center;
+  }
+}

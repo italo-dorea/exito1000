@@ -69,3 +69,28 @@
     align-items: center;
     justify-content: center;
 }
+
+@media (max-width: 768px) {
+
+  .dreams-container {
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .left-dreams,
+  .right-dreams {
+    width: 100%;
+  }
+
+  .left-dreams {
+    padding-inline: 1.5rem;
+    padding-top: 3rem;
+    padding-bottom: 2.5rem;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .right-dreams {
+    min-height: 320px;
+  }
+}
