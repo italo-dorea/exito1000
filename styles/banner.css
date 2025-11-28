@@ -159,7 +159,7 @@
 
 .foto-menor2 {
     flex: 0.4;
-     border-bottom-left-radius: 0px;
+    border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
 }
 
@@ -177,8 +177,8 @@
   .container-banner {
     width: 100%;
     padding-block: 0;
-    align-items: center;
-    text-align: center;
+    align-items: left;
+    text-align: left;
     gap: 1.5rem;
   }
 
@@ -252,25 +252,5 @@
   .foto-menor,
   .foto-menor2 {
     border-radius: 10px;
-  }
-}
-
-/* opcional: ajuste extra para telas bem pequenas */
-@media (max-width: 480px) {
-  .hero-title {
-    font-size: 2rem;
-  }
-
-  .container-banner h2 {
-    font-size: 0.9rem;
-  }
-
-  .avaliacao-container {
-    flex-direction: column;
-  }
-
-  .content-starts {
-    align-items: center;
-    text-align: center;
   }
 }

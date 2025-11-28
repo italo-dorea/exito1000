@@ -53,34 +53,111 @@
     height: auto;
 }
 
-/* --------------------------- */
+.nav-mobile {
+    display: none;
+}/* --------------------------- */
 /* MOBILE  (até 768px)        */
 /* --------------------------- */
 @media (max-width: 768px) {
 
-    .header {
-        padding-inline: 1.5rem;
-        padding-block: 10px;
-    }
+  .header {
+    padding-inline: 1.5rem;
+    padding-block: 10px;
+  }
 
-    /* some menu desktop */
-    .nav-desktop {
-        display: none;
-    }
+  /* some menu desktop */
+  .nav-desktop {
+    display: none;
+  }
 
-    /* some botão área do aluno */
-    .btn-area-aluno {
-        display: none;
-    }
+  /* some botão área do aluno */
+  .btn-area-aluno {
+    display: none;
+  }
 
-    /* ajusta logo */
-    .logo-header {
-        max-width: 95px;
-    }
+  /* ajusta logo */
+  .logo-header {
+    max-width: 95px;
+  }
 
-    /* mostra o hambúrguer */
-    .menu-toggle {
-        display: inline-flex;
-        margin-left: auto;
-    }
+  /* mostra o hambúrguer */
+  .menu-toggle {
+    display: inline-flex;
+    margin-left: auto;
+  }
+
+  /* ====== MENU MOBILE FULLSCREEN ====== */
+  .nav-mobile {
+    /* agora aparece (mas "fechado" visualmente) */
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    align-items: center;
+    gap: 2rem;
+    padding-top: 5rem;
+    position: fixed;
+    inset: 0;              /* top:0; right:0; bottom:0; left:0 */
+    width: 100%;
+    min-width: 100vw;
+    height: 100svh;
+    max-height: 100vh;
+    overflow-y: hidden;
+    background-image: url("/assets/bg-mobile.webp");
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: 9999;
+
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(100%);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  .nav-mobile.active {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateX(0);
+  }
+
+  .nav-mobile ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+  }
+
+  .nav-mobile ul li + li {
+    margin-top: 1rem;
+  }
+
+  .nav-mobile a {
+    color: #FFF;
+    font-size: 1.6rem;
+    font-weight: 400;
+  }
+
+  .btn-area-aluno-mobile button {
+    background-color: #FFF;
+    color: #00335B;
+    padding-block: 8px;
+    padding-inline: 40px;
+    border-radius: 20px;
+    border: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    cursor: pointer;
+  }
+
+  .close-menu {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    font-size: 2.5rem;
+    background: none;
+    border: none;
+    color: #FFF;
+    cursor: pointer;
+    font-weight: 300; 
+  }
 }
