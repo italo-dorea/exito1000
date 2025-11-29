@@ -18,16 +18,22 @@
 }
 
 @media (max-width: 768px) {
-  .universidades {
-    width: 100%;
-    max-width: 100vw;
-    overflow-x: scroll;
-    flex-direction: row;
-    padding-inline: 1.5rem;
-    gap: 2.3rem;
-    padding-left: 55vw;
-    justify-content: center;
-  }
+.universidades {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  scrollbar-width: none;
+  display: flex;
+  flex-direction: row;
+  padding-inline: 1.5rem;
+  gap: 2.3rem;
+  justify-content: flex-start;
+  border: none;
+}
+
+.universidades::-webkit-scrollbar {
+  display: none;
+}
 
   .universidades img {
     height: 50px;

@@ -145,10 +145,27 @@
 @media (max-width: 768px) {
 
   .section-metodo {
-    padding-inline: 1.5rem;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     background-position: top center;
   }
 
+  .section-metodo-title {
+    font-size: 1.3rem;
+  }
+  .container-title-metodo {
+    padding-top: 2rem;
+    padding-bottom: 0;
+    gap: 1rem;
+  }
+
+  .section-title-description {
+    flex-wrap: nowrap;
+    font-size: 2rem;
+    line-height: 1.2;
+
+  }
   .cards-metodos {
     flex-direction: column;
     align-items: center;
@@ -157,7 +174,7 @@
 
   .card-metodo {
     width: 100%;
-    max-width: 420px;
+    max-width: 100%;
   }
 
   .card-metodo-prof {
@@ -168,7 +185,31 @@
     gap: 1.5rem;
   }
 
+  .card-metodo h4,
+  .card-metodo-prof h4 {
+    flex-wrap: nowrap;
+    font-size: 1rem;
+  }
+
   .card-span {
     text-align: center;
   }
-}
+
+  .card-metodo-prof {
+    padding-inline: 1rem;
+  }
+
+    .faixa-container {
+      padding-inline: 0;
+     margin-left: -2rem;
+      min-width: 120svw;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .faixa {
+      font-size: 1rem;
+      font-weight: 300;
+    }
+  }
