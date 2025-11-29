@@ -105,7 +105,7 @@
     background-image: url("../assets/bg-mobile.webp");
     background-position: bottom;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     z-index: 9999;
 
     opacity: 0;
