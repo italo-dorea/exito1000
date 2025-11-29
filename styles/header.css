@@ -102,7 +102,7 @@
     height: 100svh;
     max-height: 100vh;
     overflow-y: hidden;
-    background-image: url("/assets/bg-mobile.webp");
+    background-image: url("../assets/bg-mobile.webp");
     background-position: bottom;
     background-repeat: no-repeat;
     background-size: contain;
