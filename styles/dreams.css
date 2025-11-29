@@ -28,6 +28,7 @@
 }
 
 .left-dreams p {
+    display: block;
     color: #00335B;
     font-size: 2rem;
     font-weight: 500;
@@ -57,6 +58,9 @@
     margin-top: -1rem;
     
 }
+.checked-dream-mobile {
+    display: none;    
+}
 
 .right-dreams {
     width: 40%;
@@ -69,7 +73,12 @@
     align-items: center;
     justify-content: center;
 }
-
+.paragraph-dream {
+  display: none;
+}
+.title-left-dreams-mobile {
+  display: none;
+}
 @media (max-width: 768px) {
 
   .dreams-container {
@@ -83,14 +92,46 @@
   }
 
   .left-dreams {
-    padding-inline: 1.5rem;
+    padding-inline: 0.8rem;
     padding-top: 3rem;
     padding-bottom: 2.5rem;
     align-items: flex-start;
     text-align: left;
   }
+  .title-left-dreams {
+    display: none;
+  }
+  .title-left-dreams-mobile {
+    display: block;
+    color: #0062A1;
+    font-size: 1.7rem;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  .checked-dream-mobile {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    width: 200px;
+    margin-left: -1rem;
+    margin-top: -0.5rem;
+    
+}
 
   .right-dreams {
     min-height: 320px;
   }
+  .btn-dreams {
+    font-size: 1rem;
+    width: max-content;
+    padding-inline: 80px;
+  }
+  .left-dreams p {
+    font-size: 1.3rem;
+  }
+  .right-dreams {
+    width: 100%;
+    min-height: 60vh;
+}
 }
