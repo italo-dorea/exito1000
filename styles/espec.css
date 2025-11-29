@@ -1,23 +1,21 @@
 .especialista-container {
   display: flex;
   flex-direction: row;
-  align-items: top;
-  justify-content: left;
-  align-items: bottom;
+  align-items: top;        /* "bottom" não existe, flex-end é o mais próximo */
+  justify-content: left;  /* "left" não existe, flex-start é o correto */
   padding-left: 10%;
   padding-top: 4rem;
   overflow-x: hidden;
-  /* font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
 }
 
+/* check verde colado na palavra "redação" */
 .checked {
-    position: absolute;
-    z-index: 1;
-    max-width: 345px;
-    width: auto;
-    margin-top: -1rem;
-    margin-left: -2rem;
-    
+  position: absolute;
+  z-index: 1;
+  max-width: 345px;
+  width: auto;
+  margin-top: -1rem;
+  margin-left: -2rem;
 }
 
 .espec-left {
@@ -25,7 +23,7 @@
   flex-direction: column;
   gap: 2rem;
   width: 50%;
-  align-items: left;
+  align-items: flex-start;
   padding-bottom: 3rem;
 }
 
@@ -36,8 +34,12 @@
   color: #FFF;
 }
 
+.corretores-title {
+  display: none;
+}
+
 .espec-left h3 {
-    background: linear-gradient(to bottom, #fff 0%, #6BC5FF 100%);
+  background: linear-gradient(to bottom, #fff 0%, #6BC5FF 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -49,7 +51,6 @@
 .black-letter {
   background: #101720;
   -webkit-background-clip: text;
-  /* -webkit-text-stroke: 1px #F26800; */
   background-clip: text;
   color: transparent;
   text-transform: uppercase;
@@ -57,9 +58,7 @@
 }
 
 .white-letter {
-   background: #F8F8FF;
-  /* -webkit-background-clip: text;
-  -webkit-text-stroke: 1px #F26800; */
+  background: #F8F8FF;
   background-clip: text;
   color: transparent;
   text-transform: uppercase;
@@ -69,47 +68,48 @@
 .paragraph-white {
   background: #F8F8FF;
   -webkit-background-clip: text;
-  /* -webkit-text-stroke: 0.4px #F26800; */
   background-clip: text;
   color: transparent;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 1.3rem;
   text-align: justify;
   width: 90%;
   padding-bottom: 5rem;
-  font-weight: 500;
 }
 
+/* Lado direito com background */
 .espec-right {
-  
   width: 50%;
   background-image: url("../assets/colab.png");
-  background-position:right;
+  background-position: right;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   display: flex;
   flex-direction: column;
-  align-items: right;
-  justify-content: center;
+  justify-content: bottom;
+  /* garante que o bg apareça mesmo se o conteúdo da esquerda for pouco */
+  min-height: 100%;
+  height: auto;
+  
 }
 
+/* Se algum dia voltar a usar <img> dentro, isso evita estourar a largura */
 .espec-right img {
-  min-width: 113%;
-  margin-bottom: 0;
+  max-width: 100%;
   height: auto;
 }
 
-
 /* faixa branca */
-
 .faixa-container-branca {
-  min-width: 102svw;
+  width: 100%;
+  max-width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: top;
+  align-items: flex-start;
   justify-content: center;
-  background-color: #f8f8ff00;
+  background-color: transparent;
   margin-top: -2.5rem;
+  overflow-x: clip;   /* corta qualquer sobra da rotação sem gerar scroll */
 }
 
 .faixa-branca {
@@ -119,40 +119,78 @@
   font-size: 20px;
   font-weight: 500;
   width: 100%;
-  margin-left: -2rem;
   text-align: center;
-  /* INCLINAÇÃO */
-  transform: rotate(3deg); /* ajuste o ângulo */
-  display: inline-block; /* necessário para rotacionar direitinho */
+  transform: rotate(3deg);
+  display: inline-block;
 }
 
+/* ========================= */
+/* Mobile (até 768px)       */
+/* ========================= */
 @media (max-width: 768px) {
-
   .especialista-container {
-    flex-direction: column-reverse;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-    padding-top: 3rem;
-    align-items: center;
-    text-align: center;
+    flex-direction: column;
+    padding-inline: 1rem;
+    padding-block: 2rem;
+    padding-left: 1rem; /* sobrescreve o 10% pra não empurrar nada pra direita */
   }
 
   .espec-left {
-    max-width: 100%;
+    width: 100%;
+  }
+
+  .espec-left h5 {
+    display: none;
+  }
+
+  .corretores-title {
+    display: block;
+    font-family: "kalam", sans-serif;
+    font-size: 1.2rem;
+    text-align: left;
+    font-weight: 100;
+    color: #FFF;
+  }
+
+  .espec-left h3 {
+    font-size: 2rem;
+    line-height: 1.5;
+    text-align: left;
+    padding-block: 1rem;
   }
 
   .paragraph-white {
+    font-size: 1rem;
     text-align: left;
+    padding-bottom: 0;
   }
 
-  .faixa-container,
-  .faixa-container-branca {
-    padding-inline: 1.5rem;
+  .checked {
+    position: absolute;
+    z-index: 1;
+    max-width: 14rem;
+    width: auto;
+    margin-top: -0.8rem;
+    margin-left: -1.8rem;
   }
 
-  .faixa,
-  .faixa-branca {
-    margin-left: 0;
-    transform: rotate(0deg);
-  }
-}
+  .espec-right {
+    width: 100%;
+    min-height: 300px;
+    background-position: center top;
+    }
+    
+    .faixa-container-branca {
+      width: 120%;
+      max-width: 120%;
+      margin-bottom: -1rem;
+    
+    }
+    
+    .faixa-branca {
+      width: 100%;
+      margin-left: -2rem;
+      font-size: 1rem;
+      padding-inline: 3rem;
+    }
+    }
