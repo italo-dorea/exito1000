@@ -164,28 +164,58 @@
 @media (max-width: 768px) {
 
   .plans-container {
-    padding-inline: 1.5rem;
+    padding-inline: 0;
     margin-top: 0;
     padding-top: 3rem;
     background-position: top center;
+  }
+  .plans-title-metodo {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .plans-metodo-title {
+    font-size: 1.5rem;
+  }
+  .plans-title-description {
+    font-size: 2rem;
   }
 
   .container-plains-cards {
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
+    padding-inline: 0.5rem;
+    padding-bottom: 2rem;
+    border-radius: 12px;
+  }
+  .plan-list {
+    padding-inline: 1rem;
   }
 
   .plan-1,
   .plan-2 {
     width: 100%;
     max-width: 420px;
+    border-radius: 12px;
+  }
+  .plan-list-item {
+    font-size: 1rem;
   }
 
-  .selo {
-    position: static;
-    margin: 0 auto 1rem auto;
-    display: block;
-    width: 7rem;
-  }
+.selo {
+  position: absolute;
+  z-index: 999;
+  width: 6rem;
+  height: auto;
+  justify-content: center;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -70rem;
 }
+
+}
+
+
