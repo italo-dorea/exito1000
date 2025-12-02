@@ -77,6 +77,9 @@
   <link rel="stylesheet" href="./styles/plans.css" />
   <link rel="stylesheet" href="./styles/dreams.css" />
   <link rel="stylesheet" href="./styles/footer.css" />
+
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </head>
 
 
@@ -117,7 +120,7 @@
         <section class="section-banner">
             <div class="container-banner">
                 <h1 class="hero-title">
-                    A sua <span class="gradient-text">jornada<img class="flash" src="./assets/flash.svg" /></span><br>
+                    A sua <span class="gradient-text">jornada<img class="flash" src="./assets/flash.svg" data-aos="fade-right"/></span><br>
                     para o <span class="gradient-text">Êxito!</span>
                 </h1>
                 <h2>
@@ -137,14 +140,14 @@
             <div class="galeria-alunos">
                 <!-- Coluna esquerda -->
                 <div class="galeria-col galeria-esquerda">
-                    <img src="./assets/alunos/aluno1.webp" alt="aluna 1" class="foto foto-grande">
-                    <img src="./assets/alunos/aluno2.webp" alt="aluna 2" class="foto foto-vertical">
+                    <img src="./assets/alunos/aluno1.webp" alt="aluna 1" class="foto foto-grande" data-aos="fade" data-aos-delay="50">
+                    <img src="./assets/alunos/aluno2.webp" alt="aluna 2" class="foto foto-vertical" data-aos="fade" data-aos-delay="100">
                 </div>
                 <!-- Coluna direita -->
                 <div class="galeria-col galeria-direita">
                     <div class="linha-baixo">
-                        <img src="./assets/alunos/aluno3.webp" alt="alunos 3" class="foto foto-menor">
-                        <img src="./assets/alunos/aluno4.webp" alt="aluna 4" class="foto foto-menor2">
+                        <img src="./assets/alunos/aluno3.webp" alt="alunos 3" class="foto foto-menor" data-aos="fade" data-aos-delay="150">
+                        <img src="./assets/alunos/aluno4.webp" alt="aluna 4" class="foto foto-menor2" data-aos="fade" data-aos-delay="200">
                     </div>
                 </div>
             </div>
@@ -159,7 +162,7 @@
             <div class="container-title-metodo">
                 <h3 class="section-metodo-title">A nossa plataforma tem um:</h3>
                 <h5 class="section-title-description">Método Exclusivo</h5>
-                <hr class="glow-line" />
+                <hr class="glow-line"/>
             </div>
             <div class="cards-metodos">
                 <div class="card-metodo">
@@ -301,7 +304,7 @@
                 <p class="nav-footer-title">A Êxito 1000</p>
                 <ul class="nav-footer">
                     <li><a href="#metodo">Método</a></li>
-                    <li><a href="#professor">Sobre o Matheus</a></li>
+                    <li><a href="#professor">Sobre o Curso</a></li>
                     <li><a href="#planos">Planos</a></li>
                 </ul>
             </nav>
