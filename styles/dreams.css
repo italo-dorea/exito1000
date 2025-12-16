@@ -62,17 +62,30 @@
     display: none;    
 }
 
-.right-dreams {
-    width: 40%;
-    background-image: url("../assets/alunos/aluna.webp");
-    background-position: top;
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+.right-dreams{
+  width: 40%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+.dreams-img{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  opacity: 0;
+  transition: opacity .7s ease;
+}
+
+.dreams-img.is-active{
+  opacity: 1;
+}
+
 .paragraph-dream {
   display: none;
 }

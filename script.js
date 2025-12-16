@@ -75,3 +75,47 @@ document.addEventListener('DOMContentLoaded', function () {
     for (let i = 0; i < slots.length; i++) swapImage(i);
   }, intervalMs);
 
+  //altera imagem da seção "realizar seu sonho"
+  document.addEventListener("DOMContentLoaded", () => {
+  const container = document.querySelector(".right-dreams");
+  const imgs = Array.from(container.querySelectorAll(".dreams-img"));
+
+  const sources = [
+    "./assets/alunos/aluno18.jpg",
+    "./assets/alunos/aluno15.jpg",
+    "./assets/alunos/aluno16.jpg",
+    "./assets/alunos/aluno17.jpg",
+  ];
+
+  const intervalMs = 3500;
+  const fadeMs = 700; // igual ao transition
+
+  // pré-carregar
+  sources.forEach(src => { const i = new Image(); i.src = src; });
+
+  let index = 0;         // imagem atual
+  let top = 0;           // qual <img> está visível (0 ou 1)
+
+  // garante estado inicial
+  imgs[0].src = sources[0];
+  imgs[0].classList.add("is-active");
+  imgs[1].classList.remove("is-active");
+
+  setInterval(() => {
+    const nextIndex = (index + 1) % sources.length;
+    const nextImg = imgs[1 - top];
+    const currentImg = imgs[top];
+
+    nextImg.src = sources[nextIndex];
+
+    // força a classe pra iniciar a transição corretamente
+    nextImg.classList.add("is-active");
+    currentImg.classList.remove("is-active");
+
+    // após o fade, atualiza os índices
+    setTimeout(() => {
+      index = nextIndex;
+      top = 1 - top;
+    }, fadeMs);
+  }, intervalMs);
+});
