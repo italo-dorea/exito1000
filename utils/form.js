@@ -72,16 +72,26 @@ document.addEventListener("DOMContentLoaded", () => {
     form.addEventListener("submit", (e) => {
         e.preventDefault();
 
-        const data = Object.fromEntries(new FormData(form).entries());
+        // Validação manual extra para os termos
+        const terms = document.getElementById("terms");
+        if (!terms.checked) {
+            alert("Você precisa aceitar os termos de uso para continuar.");
+            return;
+        }
 
-        console.group("✅ Checkout - valores do formulário");
+        // Captura todos os dados (incluindo Cidade e Estado selecionados)
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData.entries());
+
+        // Adiciona informações extras que não estão no form (opcional)
+        data.plan = "Diamante";
+        data.totalValue = "90.00";
+
+        console.group("🚀 Processando Boleto...");
         console.table(data);
-        console.log("Objeto completo:", data);
         console.groupEnd();
 
-        alert("Enviado com sucesso!");
-
-        // Se quiser limpar depois:
-        // form.reset();
+        // Aqui você chamaria sua API de pagamento
+        alert("Dados capturados! Gerando seu boleto...");
     });
 });
