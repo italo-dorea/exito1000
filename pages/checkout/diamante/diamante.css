@@ -1,0 +1,91 @@
+.header-diamante-page {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    min-height: 2rem;
+    background-color: #00335B;
+    padding-inline: 10%;
+    padding-block: 1rem;
+    align-items: center
+}
+
+.btn-voltar-checkout{
+    color: #fff;
+    background-color: #00000000;
+    font-size: 1rem;
+    border: none;
+    font-weight: 500;
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.main-checkout-diamante {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    min-height: 100vh;
+    padding-inline: 10%;
+    background-image: url("/assets/bg-banner.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.title-checkout-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    align-items: center;
+    padding-block: 2rem;
+}
+
+.title-checkout-container h2 {
+    color: #00335B;
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+.title-checkout-container p {
+    font-family: "kalam", sans-serif;
+    color: #63636E;
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
+.title-checkout-container p b {
+    color: #F26800;
+}
+
+.container-checkout-forms {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.left-container-forms {
+    width: 60%;
+    display: flex;
+    border: 1px solid #a5a5a5;
+    border-radius: 16px;
+    flex-direction: column;
+    gap: 0px;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.right-container-forms {
+    width: 40%;
+    display: flex;
+    border: 1px solid #a5a5a5;
+    border-radius: 16px;
+    flex-direction: column;
+    gap: 0px;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
