@@ -41,7 +41,7 @@
     </script>
 
     <!-- icones -->
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 
@@ -49,9 +49,10 @@
     <header class="header-diamante-page">
         <!-- Botão desktop -->
         <a href="https://plataforma.redacaoexito1000.com.br/student/login" target="_blank">
-            <button class="btn-voltar-checkout" onclick="clickReturn()"> <i class="fa-solid fa-arrow-left" style="color: #ffffff;"></i>Voltar para o site</button>
+            <button class="btn-voltar-checkout" onclick="clickReturn()"> <i class="fa-solid fa-arrow-left"
+                    style="color: #ffffff;"></i>Voltar para o site</button>
         </a>
-         <img src="../../../assets/logo.svg" alt="Logo Exito 1000" class="logo-header" />
+        <img src="../../../assets/logo.svg" alt="Logo Exito 1000" class="logo-header" />
     </header>
     <main class="main-checkout-diamante">
         <section class="title-checkout-container">
@@ -60,12 +61,188 @@
         </section>
         <section class="container-checkout-forms">
             <div class="left-container-forms">
+                <div class="title-form-container">
+                    <h4>Seus Dados</h4>
+                    <p>Preencha as informações abaixo para continuar</p>
+                </div>
+                <div>
+                    <form id="checkoutForm" class="checkout-form" novalidate>
+                        <div class="checkout-grid">
+                            <!-- Nome completo -->
+                            <div class="field">
+                                <label class="label" for="fullName">Nome Completo <span class="req">*</span></label>
+                                <div class="control">
+                                    <i class="fa-regular fa-user icon" aria-hidden="true"></i>
+                                    <input id="fullName" name="fullName" type="text" class="input"
+                                        placeholder="Digite o seu nome completo" autocomplete="name" required />
+                                </div>
+                                <small class="hint"> </small>
+                            </div>
 
+                            <!-- E-mail -->
+                            <div class="field">
+                                <label class="label" for="email">E-mail <span class="req">*</span></label>
+                                <div class="control">
+                                    <i class="fa-regular fa-envelope icon" aria-hidden="true"></i>
+                                    <input id="email" name="email" type="email" class="input"
+                                        placeholder="Digite o seu E-mail" autocomplete="email" inputmode="email"
+                                        required />
+                                </div>
+                                <small class="hint"> </small>
+                            </div>
+
+                            <!-- CPF -->
+                            <div class="field span-6">
+                                <label class="label" for="cpf">CPF <span class="req">*</span></label>
+                                <div class="control">
+                                    <i class="fa-regular fa-id-card icon" aria-hidden="true"></i>
+                                    <input id="cpf" name="cpf" type="text" class="input" placeholder="000.000.000-00"
+                                        autocomplete="off" inputmode="numeric" required />
+                                </div>
+                                <small class="hint"> </small>
+                            </div>
+
+                            <!-- Telefone -->
+                            <div class="field span-6">
+                                <label class="label" for="phone">Telefone <span class="req">*</span></label>
+                                <div class="control">
+                                    <i class="fa-solid fa-phone icon" aria-hidden="true"></i>
+                                    <input id="phone" name="phone" type="tel" class="input"
+                                        placeholder="(00) 00000-0000" autocomplete="tel" inputmode="tel" required />
+                                </div>
+                                <small class="hint"> </small>
+                            </div>
+
+                            <!-- CEP -->
+                            <div class="field">
+                                <label class="label" for="cep">CEP <span class="req">*</span></label>
+                                <div class="control">
+                                    <i class="fa-regular fa-map icon" aria-hidden="true"></i>
+                                    <input id="cep" name="cep" type="text" class="input" placeholder="Digite seu CEP"
+                                        autocomplete="postal-code" inputmode="numeric" required />
+                                </div>
+                                <small class="hint"> </small>
+                            </div>
+
+                            <!-- Endereço -->
+                            <div class="field span-7">
+                                <label class="label" for="address">Endereço <span class="req">*</span></label>
+                                <div class="control">
+                                    <i class="fa-solid fa-location-dot icon" aria-hidden="true"></i>
+                                    <input id="address" name="address" type="text" class="input"
+                                        placeholder="Digite o seu Endereço" autocomplete="street-address" required />
+                                </div>
+                                <small class="hint"> </small>
+                            </div>
+
+                            <!-- Número -->
+                            <div class="field span-5">
+                                <label class="label" for="number">Número <span class="req">*</span></label>
+                                <div class="control">
+                                    <i class="fa-solid fa-hashtag icon" aria-hidden="true"></i>
+                                    <input id="number" name="number" type="text" class="input"
+                                        placeholder="Digite o Número" autocomplete="address-line2" inputmode="numeric"
+                                        required />
+                                </div>
+                                <small class="hint"> </small>
+                            </div>
+
+                            <!-- Complemento -->
+                            <div class="field span-7">
+                                <label class="label" for="complement">Complemento <span class="req">*</span></label>
+                                <div class="control">
+                                    <i class="fa-regular fa-square-plus icon" aria-hidden="true"></i>
+                                    <input id="complement" name="complement" type="text" class="input"
+                                        placeholder="Digite o Complemento" autocomplete="address-line2" required />
+                                </div>
+                                <small class="hint"> </small>
+                            </div>
+
+                            <!-- Bairro -->
+                            <div class="field span-5">
+                                <label class="label" for="district">
+                                    Bairro <span class="req">*</span>
+                                </label>
+
+                                <div class="control">
+                                    <i class="fa-solid fa-house icon" aria-hidden="true"></i>
+                                    <input id="district" name="district" type="text" class="input"
+                                        placeholder="Digite o seu Bairro" autocomplete="address-level3" required />
+                                </div>
+
+                                <small class="hint"> </small>
+                            </div>
+
+                            <!-- Estado -->
+                            <div class="field span-5">
+                                <label class="label" for="state">Estado <span class="req">*</span></label>
+                                <div class="control">
+                                    <i class="fa-regular fa-flag icon" aria-hidden="true"></i>
+                                    <select id="state" name="state" class="select" required>
+                                        <option value="" selected disabled>Selecione o seu Estado</option>
+                                    </select>
+                                    <i class="fa-solid fa-chevron-down chevron" aria-hidden="true"></i>
+                                </div>
+                                <small class="hint"> </small>
+                            </div>
+
+                            <!-- Cidade -->
+                            <div class="field span-7">
+                                <label class="label" for="city">Cidade <span class="req">*</span></label>
+                                <div class="control">
+                                    <i class="fa-regular fa-building icon" aria-hidden="true"></i>
+                                    <select id="city" name="city" class="select" required disabled>
+                                        <option value="" selected disabled>Selecione a sua Cidade</option>
+                                    </select>
+                                    <i class="fa-solid fa-chevron-down chevron" aria-hidden="true"></i>
+                                </div>
+                                <small class="hint"> </small>
+                            </div>
+
+                            <!-- Ponto de Referência -->
+                            <div class="field">
+                                <label class="label" for="referencePoint">Ponto de Referência <span
+                                        class="req">*</span></label>
+                                <div class="control">
+                                    <i class="fa-regular fa-compass icon" aria-hidden="true"></i>
+                                    <input id="referencePoint" name="referencePoint" type="text" class="input"
+                                        placeholder="Digite o Ponto de Referência" autocomplete="off" required />
+                                </div>
+                                <small class="hint"> </small>
+                            </div>
+
+                            <!-- Indicação -->
+                            <div class="field">
+                                <label class="label" for="partnerReferral">Você recebeu indicação de algum parceiro?
+                                    <span class="req">*</span></label>
+                                <div class="control">
+                                    <i class="fa-regular fa-handshake icon" aria-hidden="true"></i>
+                                    <select id="partnerReferral" name="partnerReferral" class="select" required>
+                                        <option value="" selected disabled>Selecione a Indicação</option>
+                                        <option value="instagram">Instagram</option>
+                                        <option value="google">Google</option>
+                                        <option value="amigo">Amigo/Indicação</option>
+                                        <option value="outro">Outro</option>
+                                    </select>
+                                    <i class="fa-solid fa-chevron-down chevron" aria-hidden="true"></i>
+                                </div>
+                                <small class="hint"> </small>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn-submit">
+                                Enviar
+                            </button>
+                        </div>
+                    </form>
+
+                </div>
             </div>
             <div class="right-container-forms">
 
             </div>
-        </section>             
+        </section>
     </main>
     <footer class="bg-footer" itemscope itemtype="https://schema.org/Organization">
         <div class="container-nav-footer">
@@ -88,13 +265,7 @@
             <p class="copy-footer">© 2025 <span itemprop="name">Êxito 1000</span> | Todos Os Direitos Reservados</p>
         </div>
     </footer>
-    <script src="./script.js">
-        function clickReturn() {
-                document.getElementById("btn-voltar-checkout").addEventListener("click", function () {
-                    window.location.href = "/index.html";
-                });
-            }
-    </script>
-    </body>
-    
-    </html>
+    <script src="../../../utils/form.js"></script>
+</body>
+
+</html>

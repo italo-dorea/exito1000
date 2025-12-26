@@ -27,6 +27,7 @@
     gap: 0px;
     min-height: 100vh;
     padding-inline: 10%;
+    padding-bottom: 3rem;
     background-image: url("/assets/bg-banner.svg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -73,9 +74,8 @@
     border-radius: 16px;
     flex-direction: column;
     gap: 0px;
-    align-items: center;
-    justify-content: center;
-    padding: 1rem;
+    padding-block: 1rem;
+    padding-inline: 1.5rem;
 }
 
 .right-container-forms {
@@ -85,7 +85,182 @@
     border-radius: 16px;
     flex-direction: column;
     gap: 0px;
-    align-items: center;
-    justify-content: center;
-    padding: 1rem;
+    padding-block: 1rem;
+    padding-inline: 1.5rem;
+}
+
+.title-form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    align-items: left;
+    padding-block: 1rem;
+    font-weight: 300;
+}
+
+.title-form-container h4 {
+    color: 101720;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+
+/* =========================
+   CHECKOUT FORM (escopo)
+========================= */
+.checkout-form {
+  width: 100%;
+}
+
+.checkout-grid {
+  --border: #E5E7EB;
+  --text: #101720;
+  --muted: #6B7280;
+  --placeholder: #9CA3AF;
+  --bg: #FFFFFF;
+  --focus: #2E6AA3;
+  --req: #F26800;
+
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 14px 18px;
+  padding-block: 6px 2px;
+}
+
+.field {
+  grid-column: span 12;
+}
+
+.field.span-5 { grid-column: span 5; }
+.field.span-6 { grid-column: span 6; }
+.field.span-7 { grid-column: span 7; }
+
+.label {
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+  margin: 0 0 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.req {
+  color: var(--req);
+  font-weight: 700;
+}
+
+.control {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  position: absolute;
+  left: 12px;
+  font-size: 0.95rem;
+  color: #9AA3AF;
+  pointer-events: none;
+}
+
+.input,
+.select {
+  width: 100%;
+  height: 44px;
+  font-weight: 300;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 0.95rem;
+  padding: 0 14px 0 38px;
+  outline: none;
+  transition: border-color 160ms ease, box-shadow 160ms ease, background 160ms ease;
+}
+
+.input::placeholder {
+  color: var(--placeholder);
+}
+
+/* Select com setinha */
+.select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding-right: 40px;
+  cursor: pointer;
+}
+
+.chevron {
+  position: absolute;
+  right: 12px;
+  font-size: 0.9rem;
+  color: #9AA3AF;
+  pointer-events: none;
+}
+
+/* Focus “senior” (acessível + bonito) */
+.input:focus,
+.select:focus {
+  border-color: rgba(46, 106, 163, 0.7);
+  box-shadow: 0 0 0 4px rgba(46, 106, 163, 0.15);
+}
+
+/* Estado inválido (caso você queira usar no JS depois) */
+.input.is-invalid,
+.select.is-invalid {
+  border-color: rgba(220, 38, 38, 0.65);
+  box-shadow: 0 0 0 4px rgba(220, 38, 38, 0.12);
+}
+
+.hint {
+  display: block;
+  margin-top: 6px;
+  font-size: 0.8rem;
+  color: var(--muted);
+  min-height: 1em; /* mantém layout estável mesmo sem texto */
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 16px;
+}
+
+.btn-submit {
+  height: 44px;
+  padding: 0 18px;
+  border: none;
+  border-radius: 12px;
+  background: #00335B;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 120ms ease, filter 120ms ease;
+}
+
+.btn-submit:hover {
+  filter: brightness(1.05);
+}
+
+.btn-submit:active {
+  transform: translateY(1px);
+}
+
+/* Responsivo */
+@media (max-width: 920px) {
+  .field.span-5,
+  .field.span-6,
+  .field.span-7 {
+    grid-column: span 12;
+  }
+
+  .form-actions {
+    justify-content: stretch;
+  }
+
+  .btn-submit {
+    width: 100%;
+  }
 }
