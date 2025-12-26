@@ -84,8 +84,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const data = Object.fromEntries(formData.entries());
 
         // Adiciona informações extras que não estão no form (opcional)
-        data.plan = "Diamante";
-        data.totalValue = "90.00";
+        data.plano = "Diamante";
+        data.valorTotal = "R$ 90,00";
 
         console.group("🚀 Processando Boleto...");
         console.table(data);
