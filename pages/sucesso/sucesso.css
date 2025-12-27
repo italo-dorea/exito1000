@@ -28,7 +28,7 @@
   min-height: 90vh;
   padding-inline: 10%;
   padding-bottom: 3rem;
-  background-image: url("/assets/bg-sucesso.png");
+  background-image: url("../../assets/bg-sucesso.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom;
