@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   if (!stateSelect || !citySelect) return;
 
   // Carrega o JSON (coloque o arquivo em /assets/data/estados-cidades.json por exemplo)
-  const resp = await fetch("../assets/data/cidades.json", { cache: "force-cache" });
+  const resp = await fetch("../../../assets/data/cidades.json", { cache: "force-cache" });
   const data = await resp.json();
 
   // Indexa estados por sigla para lookup O(1)
