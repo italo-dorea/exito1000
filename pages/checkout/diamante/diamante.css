@@ -317,7 +317,7 @@
   padding-block: 1.5rem;
   border-radius: 18px;
   border: none;
-  cursor: pointer;
+  cursor: block;
   font-weight: 700;
 }
 
@@ -552,4 +552,34 @@
 
 .security-info i {
     margin-right: 5px;
+}
+
+@media (max-width: 768px) {
+    .bottom-container-forms {
+        width: 100%;
+    }
+    .main-checkout-diamante {
+        padding-inline: 1.2rem;
+    }
+    .container-checkout-forms {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .left-container-forms {
+      width: 100%;
+    }
+    .right-container-forms {
+      width: 100%;
+    }
+    .payment-method-card {
+      border: none;
+      padding: 0;
+    }
+    .card-diamante {
+      background-size: cover;
+    }
+    .checkout-grid {
+      gap: 0;
+    }
 }
