@@ -93,6 +93,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Aqui você chamaria sua API de pagamento
         // alert("Dados capturados! Gerando seu boleto...");
-        window.location.href = "../pages/sucesso/sucesso.html";
+        window.location.href = "../../pages/sucesso/sucesso.html";
     });
 });
