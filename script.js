@@ -119,3 +119,71 @@ document.addEventListener('DOMContentLoaded', function () {
     }, fadeMs);
   }, intervalMs);
 });
+
+//abrir dialog do video planos
+(function setupVideoDialog() {
+  const dialog = document.getElementById("videoDialog");
+  const closeBtn = document.getElementById("videoDialogClose");
+  const player = document.getElementById("videoDialogPlayer");
+
+  // Vídeos "genéricos" temporários (troque pelos seus .mp4 reais quando hospedar)
+  // Coloque os arquivos em /assets/videos/ no seu projeto.
+  const VIDEO_BY_PLAN = {
+    "#diamante": "https://redacaoexito1000.com.br/midias/video-teste.mp4",
+    "#premium": "https://redacaoexito1000.com.br/midias/video-teste.mp4",
+  };
+
+  // fallback caso passe algo diferente
+  const FALLBACK_VIDEO = "/assets/videos/generico.mp4";
+
+  // Função global para você chamar no onclick ou em qualquer lugar
+  window.openPlanVideo = function openPlanVideo(planHash) {
+    const src = VIDEO_BY_PLAN[planHash] || FALLBACK_VIDEO;
+
+    // Atualiza o src do vídeo e abre o dialog
+    player.pause();
+    player.removeAttribute("src");
+    player.load();
+
+    player.src = src;
+
+    // Abre modal (dialog nativo)
+    if (typeof dialog.showModal === "function") {
+      dialog.showModal();
+    } else {
+      // fallback simples se o browser não suportar <dialog>
+      dialog.setAttribute("open", "true");
+    }
+
+    // tenta dar play (pode ser bloqueado no mobile; o controls resolve)
+    player.play().catch(() => {});
+  };
+
+  function closeDialog() {
+    player.pause();
+    dialog.close?.();
+    dialog.removeAttribute("open");
+  }
+
+  // Fechar botão
+  closeBtn.addEventListener("click", closeDialog);
+
+  // Fechar clicando no backdrop (fora do conteúdo)
+  dialog.addEventListener("click", (e) => {
+    const rect = dialog.getBoundingClientRect();
+    const clickedInside =
+      e.clientX >= rect.left &&
+      e.clientX <= rect.right &&
+      e.clientY >= rect.top &&
+      e.clientY <= rect.bottom;
+
+    if (!clickedInside) closeDialog();
+  });
+
+  // Fechar com ESC
+  dialog.addEventListener("cancel", (e) => {
+    e.preventDefault();
+    closeDialog();
+  });
+})();
+

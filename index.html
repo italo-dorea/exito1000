@@ -77,6 +77,7 @@
     <link rel="stylesheet" href="./styles/plans.css?v=23122025" />
     <link rel="stylesheet" href="./styles/dreams.css?v=23122025" />
     <link rel="stylesheet" href="./styles/footer.css?v=23122025" />
+    <link rel="stylesheet" href="./styles/video-dialog.css?v=23122025" />
 
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -233,35 +234,66 @@
             <div class="plans-title-metodo">
                 <h3 class="plans-metodo-title">Sob medida para sua nota 1000!</h3>
                 <h5 class="plans-title-description">Planos</h5>
-                <hr class="plans-glow-line" />
+                
+                <!-- <hr class="plans-glow-line" /> -->
+
+                <a href="javascript:void(0)" onclick="openPlanVideo('#premium')" class="plan-video-planos">
+                    Entenda as diferenças entre os planos (Clique aqui)
+                </a>
             </div>
             <div class="container-plains-cards">
                 <img class="selo" src="./assets/selo.svg" alt="selo" />
                 <div class="plan-1">
                     <h5 class="name-plan">Plano Diamante</h5>
                     <div class="faixa-plan-1">
-                        <b>04 Mentorias individuais por mês</b><br />
-                        Com Matheus*
-                    </div>
-                    <ul class="plan-list">
-                        <li class="plan-list-item"><img src="./assets/icon-check.svg" alt="icon" /> Material de apoio na
-                            sua casa;</li>
-                        <li class="plan-list-item"><img src="./assets/icon-check.svg" alt="icon" /> Redações ilimitadas;
-                        </li>
-                        <li class="plan-list-item"><img src="./assets/icon-check.svg" alt="icon" /> Correções ao vivo na
-                            mentoria;
-                        </li>
-                        <li class="plan-list-item"><img src="./assets/icon-check.svg" alt="icon" /> 2 simulados de
-                            redação por mês;</li>
-                        <li class="plan-list-item"><img src="./assets/icon-check.svg" alt="icon" /> Aulas ao vivo e
-                            gravadas com o Profº Matheus;</li>
-                        <li class="plan-list-item"><img src="./assets/icon-check.svg" alt="icon" /> Acesso a plataforma
-                            Êxito 1000;</li>
-                        <li class="plan-list-item"><img src="./assets/icon-check.svg" alt="icon" /> Grupo da turma no
-                            Telegram;</li>
-                        <li class="plan-list-item"><img src="./assets/icon-check.svg" alt="icon" /> Suporte individual
-                            no chat.</li>
-                    </ul>
+                        <b>Mentoria individual toda semana</b><br />
+                        com o prof. Matheus Costa.
+                        </div>
+                        <ul class="plan-list">
+                            <li class="plan-list-item">
+                                <img src="./assets/icon-check.svg" alt="icon" />
+                                Grupo da turma no Telegram;
+                            </li>
+                        
+                            <li class="plan-list-item">
+                                <img src="./assets/icon-check.svg" alt="icon" />
+                                Acesso à plataforma Êxito 1000;
+                            </li>
+                        
+                            <li class="plan-list-item">
+                                <img src="./assets/icon-check.svg" alt="icon" />
+                                Aulas ao vivo toda semana em grupo;
+                            </li>
+                        
+                            <li class="plan-list-item">
+                                <img src="./assets/icon-check.svg" alt="icon" />
+                                Simulado de redação mensal;
+                            </li>
+                        
+                            <li class="plan-list-item" style="font-weight: 500;">
+                                <img src="./assets/icon-check.svg" alt="icon" />
+                                Correção da redação ao vivo na mentoria;
+                            </li>
+                        
+                            <li class="plan-list-item" style="font-weight: 500;">
+                                <img src="./assets/icon-check.svg" alt="icon" />
+                                Redações ilimitadas;
+                            </li>
+                        
+                            <li class="plan-list-item" style="font-weight: 500;">
+                                <img src="./assets/icon-check.svg" alt="icon" />
+                                Simulado de redação bônus mensal;
+                            </li>
+                        
+                            <li class="plan-list-item" style="font-weight: 500;">
+                                <img src="./assets/icon-check.svg" alt="icon" />
+                                KIT EXCLUSIVO DIAMANTE
+                                <a href="javascript:void(0)" onclick="openPlanVideo('#diamante')" class="plan-video-link">
+                                    ( veja o vídeo )
+                                </a>                                
+                            </li>
+                        </ul>
+
                     <a href="https://api.whatsapp.com/send?phone=5571996888181" target="_blank">
                         <button class="plan-button">Lista de espera</button>
                     </a>
@@ -270,24 +302,50 @@
                 <div class="plan-2">
                     <h5 class="name-plan">Plano Premium</h5>
                     <ul class="plan-list">
-                        <!-- repita os mesmos itens ou variações -->
-                        <li class="plan-list-item"><img src="./assets/icon-check.svg" alt="icon" /> Material de apoio na
-                            sua casa;</li>
-                        <li class="plan-list-item"><img src="./assets/icon-check.svg" alt="icon" /> 4 redações mensais +
-                            reescritas</li>
-                        <li class="plan-list-item"><img src="./assets/icon-check.svg" alt="icon" /> Correções em 3 dias
-                            úteis;</li>
-                        <li class="plan-list-item"><img src="./assets/icon-check.svg" alt="icon" /> 1 simulado de
-                            redação por mês;</li>
-                        <li class="plan-list-item"><img src="./assets/icon-check.svg" alt="icon" /> Aulas ao vivo toda
-                            semana;</li>
-                        <li class="plan-list-item"><img src="./assets/icon-check.svg" alt="icon" /> Acesso a plataforma
-                            Êxito 1000;</li>
-                        <li class="plan-list-item"><img src="./assets/icon-check.svg" alt="icon" /> Grupo da turma no
-                            Telegram;</li>
-                        <li class="plan-list-item"><img src="./assets/icon-check.svg" alt="icon" /> Suporte individual
-                            no chat.</li>
+                        <li class="plan-list-item">
+                            <img src="./assets/icon-check.svg" alt="icon" />
+                            Grupo da turma no Telegram;
+                        </li>
+                
+                        <li class="plan-list-item">
+                            <img src="./assets/icon-check.svg" alt="icon" />
+                            Acesso à plataforma Êxito 1000;
+                        </li>
+                
+                        <li class="plan-list-item">
+                            <img src="./assets/icon-check.svg" alt="icon" />
+                            Aulas ao vivo toda semana em grupo;
+                        </li>
+                
+                        <li class="plan-list-item">
+                            <img src="./assets/icon-check.svg" alt="icon" />
+                            Simulado de redação mensal;
+                        </li>
+                
+                        <li class="plan-list-item" style="font-weight: 500;">
+                            <img src="./assets/icon-check.svg" alt="icon" />
+                            Correção em até 3 dias úteis;
+                        </li>
+                
+                        <li class="plan-list-item" style="font-weight: 500;">
+                            <img src="./assets/icon-check.svg" alt="icon" />
+                            8 redações mensais<span style="font-size: 0.9rem; align-items: center; font-style: italic;">(4 escritas e 4 reescritas);</span>
+                        </li>
+                
+                        <li class="plan-list-item" style="font-weight: 500;">
+                            <img src="./assets/icon-check.svg" alt="icon" />
+                            Mentoria de orientação<span style="font-size: 0.9rem; align-items: center; font-style: italic;">(uma única vez);</span>
+                        </li>
+                
+                        <li class="plan-list-item" style="font-weight: 500;">
+                            <img src="./assets/icon-check.svg" alt="icon" />
+                            KIT EXCLUSIVO PREMIUM
+                            <a href="javascript:void(0)" onclick="openPlanVideo('#premium')" class="plan-video-link">
+                                ( veja o vídeo )
+                            </a>
+                        </li>
                     </ul>
+
                     <a href="https://api.whatsapp.com/send?phone=5571996888181" target="_blank">
                         <button class="plan-button">Faça sua matrícula</button>
                     </a>
@@ -332,7 +390,15 @@
             <p class="copy-footer">© 2025 <span itemprop="name">Êxito 1000</span> | Todos Os Direitos Reservados</p>
         </div>
     </footer>
+    <dialog id="videoDialog" class="video-dialog" aria-label="Vídeo do plano">
+        <button id="videoDialogClose" class="video-dialog-close" aria-label="Fechar">×</button>
+    
+        <div class="video-dialog-body">
+            <video id="videoDialogPlayer" controls playsinline preload="metadata"></video>
+        </div>
+    </dialog>
     <script src="./script.js?v=23122025"></script>
-</body>
-
-</html>
+    
+    </body>
+    
+    </html>

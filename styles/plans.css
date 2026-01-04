@@ -39,6 +39,18 @@
   margin-top: -1rem;
 }
 
+.plan-video-planos {
+  color: #fff;
+  font-style: italic;
+  font-size: 0.9rem;
+  font-weight: 400;
+  align-items: center;
+  ;
+}
+.plan-video-planos:hover{
+  color: #000000;
+}
+
 .plans-glow-line {
   border: none;
   height: 10px;
@@ -113,7 +125,8 @@
   list-style: none;
   width: 100%;
   text-align: left;
-  padding-inline: 5rem;
+  padding-left: 5rem;
+  padding-right: 0.5rem;
 }
 
 .plan-list-item {
@@ -121,8 +134,13 @@
   flex-direction: row;
   gap: 10px;
   color: #fff;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 300;
+  align-items: center;
+}
+.plan-list-item img {
+  width: 20px;
+  height: 20px;
 }
 
 .plan-button {
@@ -159,6 +177,17 @@
   left: 0;
   margin-left: 14svw;
   margin-top: 5rem;
+}
+
+.plan-video-link {
+  color: #F26800;
+  font-style: italic;
+  font-size: 0.9rem;
+  align-items: center;
+}
+
+.plan-video-link:hover {
+  opacity: 0.85;
 }
 
 @media (max-width: 768px) {
