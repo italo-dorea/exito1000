@@ -358,32 +358,6 @@
   height: 20px;
 }
 
-.resume-subtotal {
-  font-weight: 300;
-  padding-inline: 1.5rem;
-}
-
-.subtotal {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.resume-total {
-  font-weight: 300;
-  padding-inline: 1.5rem;
-}
-
-.total {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.total span {
-  font-weight: 700;
-}
-
 /* seção de pagamento */
 
 .bottom-container-forms {

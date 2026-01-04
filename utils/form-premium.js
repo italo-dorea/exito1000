@@ -104,7 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       // Sucesso
-      window.location.href = "../../pages/sucesso/sucesso.html";
+      window.location.href = "/pages/sucesso/sucesso.html";
     } catch (err) {
       console.error(err);
       alert("Erro de conexão. Tente novamente.");
