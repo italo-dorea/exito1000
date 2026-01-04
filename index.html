@@ -140,14 +140,17 @@
                     Aprenda a escrever redação com uma metodologia <b>ativa</b> e <b>individualizada.</b>
                 </h2>
                 <a href="#planos">
-                    <button>Conheça nossos planos</button>
+                    <button>Conheça os planos</button>
                 </a>
-                <div class="avaliacao-container">
+                <!-- <div class="avaliacao-container">
                     <img src="./assets/alunos/avatars.svg" alt="avatars" class="avatars" />
                     <div class="content-starts">
                         <h4><b>milhares</b> de alunos treinados.</h4>
                         <p>satisfação<img src="./assets/starts.svg" alt="starts" /></p>
                     </div>
+                </div> -->
+                <div class="container-video-planos">
+                    <img src="/assets/video-banner.png" alt="play-planos" class="video-planos" onclick="openPlanVideo('#premium')" />
                 </div>
             </div>
             <div class="galeria-alunos">
@@ -166,10 +169,24 @@
             </div>
         </section>
         <section class="universidades">
-            <img src="./assets/univ/ufba.svg" alt="universidadades" />
-            <img src="./assets/univ/bahiana.svg" alt="universidadades" />
-            <img src="./assets/univ/uneb.svg" alt="universidadades" />
-            <img src="./assets/univ/uesb.svg" alt="universidadades" />
+            <div class="universidades-track">
+                <img src="./assets/univ/ufba.svg" alt="UFBA" />
+                <img src="./assets/univ/bahiana.svg" alt="Bahiana" />
+                <img src="./assets/univ/uneb.svg" alt="UNEB" />
+                <img src="./assets/univ/uesb.svg" alt="UESB" />
+        
+                <!-- duplicado para loop -->
+                <img src="./assets/univ/ufba.svg" alt="" aria-hidden="true" />
+                <img src="./assets/univ/bahiana.svg" alt="" aria-hidden="true" />
+                <img src="./assets/univ/uneb.svg" alt="" aria-hidden="true" />
+                <img src="./assets/univ/uesb.svg" alt="" aria-hidden="true" />
+
+                 <!-- duplicado para loop -->
+                <img src="./assets/univ/ufba.svg" alt="" aria-hidden="true" />
+                <img src="./assets/univ/bahiana.svg" alt="" aria-hidden="true" />
+                <img src="./assets/univ/uneb.svg" alt="" aria-hidden="true" />
+                <img src="./assets/univ/uesb.svg" alt="" aria-hidden="true" />
+            </div>
         </section>
         <section class="section-metodo" id="metodo">
             <div class="container-title-metodo">

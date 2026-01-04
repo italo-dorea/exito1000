@@ -1,42 +1,59 @@
 .universidades {
-    display: flex;
-    flex-direction: row;
-    gap: 0.5rem;
-    border: 1px solid #bdbdbd;
-    padding: 1rem;
-    justify-content: space-around;
-    align-items: center;
-    padding-inline: 3%;
-}
-
-.universidades img {
-    width: auto;
-    height: 100px;
-    max-height: fit-content;
-    max-width: 150px;
-
-}
-
-@media (max-width: 768px) {
-.universidades {
-  width: 100%;
-  max-width: 100%;
-  overflow-x: auto;
-  scrollbar-width: none;
+  border: 1px solid #bdbdbd;
+  padding: 1rem;
+  padding-inline: 3%;
   display: flex;
-  flex-direction: row;
-  padding-inline: 1.5rem;
-  gap: 2.3rem;
-  justify-content: flex-start;
-  border: none;
+  align-items: center;
+  overflow: hidden;            /* necessário pro “slider” */
+  width: 100%;
 }
 
-.universidades::-webkit-scrollbar {
-  display: none;
+/* o “trilho” que vai deslizar */
+.universidades-track {
+  display: flex;
+  align-items: center;
+  gap: 8rem;
+  width: max-content;
+  animation: univs-scroll 18s linear infinite;
+  will-change: transform;
 }
+
+/* imagens (desktop padrão) */
+.universidades img {
+  width: auto;
+  height: 100px;
+  max-width: 150px;
+  flex: 0 0 auto;
+}
+
+/* pausa ao passar o mouse (desktop) */
+.universidades:hover .universidades-track {
+  animation-play-state: paused;
+}
+
+/* pausa ao tocar/segurar (mobile) */
+.universidades:active .universidades-track {
+  animation-play-state: paused;
+}
+
+/* MOBILE ajustes */
+@media (max-width: 768px) {
+  .universidades {
+    border: none;
+    padding-inline: 1.5rem;
+  }
 
   .universidades img {
     height: 50px;
     max-width: 100px;
+  }
+}
+
+@keyframes univs-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
   }
 }
