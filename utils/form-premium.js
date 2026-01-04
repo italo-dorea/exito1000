@@ -59,34 +59,60 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 //form function
 document.addEventListener("DOMContentLoaded", () => {
-    const form = document.getElementById("checkoutForm");
+  const form = document.getElementById("checkoutForm");
+  if (!form) return;
 
-    if (!form) return;
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
 
-    form.addEventListener("submit", (e) => {
-        e.preventDefault();
+    // Validação dos termos
+    const terms = document.getElementById("terms");
+    if (terms && !terms.checked) {
+      alert("Você precisa aceitar os termos de uso para continuar.");
+      return;
+    }
 
-        // Validação manual extra para os termos
-        const terms = document.getElementById("terms");
-        if (!terms.checked) {
-            alert("Você precisa aceitar os termos de uso para continuar.");
-            return;
+    // Captura dados do form
+    const formData = new FormData(form);
+
+    // Extra enviado para o PHP
+    formData.set("plano", "Premium"); // ou "Diamante"
+
+    // Botão submit (evita duplo clique)
+    const submitBtn = form.querySelector('button[type="submit"]');
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Enviando...";
+    }
+
+    try {
+      // ✅ URL relativa (melhor prática)
+      const res = await fetch("https://redacaoexito1000.com.br/api/send.php", {
+        method: "POST",
+        body: formData,
+      });
+
+      const result = await res.json();
+
+      if (result.status !== "success") {
+        alert(result.message || "Não foi possível enviar. Tente novamente.");
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = "Gerar Boleto Bancário";
         }
+        return;
+      }
 
-        // Captura todos os dados (incluindo Cidade e Estado selecionados)
-        const formData = new FormData(form);
-        const data = Object.fromEntries(formData.entries());
+      // Sucesso
+      window.location.href = "../../pages/sucesso/sucesso.html";
+    } catch (err) {
+      console.error(err);
+      alert("Erro de conexão. Tente novamente.");
 
-        // Adiciona informações extras que não estão no form (opcional)
-        data.plano = "Diamante";
-        data.valorTotal = "R$ 90,00";
-
-        console.group("🚀 Processando Boleto...");
-        console.table(data);
-        console.groupEnd();
-
-        // Aqui você chamaria sua API de pagamento
-        // alert("Dados capturados! Gerando seu boleto...");
-        window.location.href = "../../pages/sucesso/sucesso.html";
-    });
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Gerar Boleto Bancário";
+      }
+    }
+  });
 });
