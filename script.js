@@ -167,8 +167,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // Vídeos "genéricos" temporários (troque pelos seus .mp4 reais quando hospedar)
   // Coloque os arquivos em /assets/videos/ no seu projeto.
   const VIDEO_BY_PLAN = {
-    "#diamante": "https://redacaoexito1000.com.br/midias/video-teste.mp4",
-    "#premium": "https://redacaoexito1000.com.br/midias/video-teste.mp4",
+    "#diamante": "https://redacaoexito1000.com.br/midias/disponivel.mp4",
+    "#premium": "https://redacaoexito1000.com.br/midias/disponivel.mp4",
   };
 
   // fallback caso passe algo diferente
