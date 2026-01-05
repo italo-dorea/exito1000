@@ -23,9 +23,11 @@
 
 .main-checkout-diamante {
   display: flex;
+  align-items: center;
   flex-direction: column;
   gap: 0px;
   min-height: 90vh;
+  height: 100%;
   padding-inline: 10%;
   padding-bottom: 3rem;
   background-image: url("../../assets/bg-sucesso.png");
@@ -37,8 +39,11 @@
 .title-checkout-container {
   display: flex;
   flex-direction: column;
-  gap: 0px;
+  gap: 10px;
+  height: 100%;;
   align-items: center;
+  justify-content: center;
+  text-align: center;
   padding-block: 2rem;
 }
 
