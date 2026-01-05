@@ -45,8 +45,9 @@
   font-size: 0.9rem;
   font-weight: 400;
   align-items: center;
-  ;
+  text-align: center;
 }
+
 .plan-video-planos:hover{
   color: #000000;
 }
@@ -232,17 +233,11 @@
   }
 
 .selo {
-  position: absolute;
-  z-index: 999;
-  width: 6rem;
-  height: auto;
-  justify-content: center;
-  margin: 0 auto;
-  left: 0;
-  right: 0;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: -70rem;
+ display: none;
+}
+
+.plan-video-planos {
+  font-size: 0.7rem;
 }
 
 }
