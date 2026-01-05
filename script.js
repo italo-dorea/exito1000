@@ -22,61 +22,99 @@ document.querySelectorAll("#nav-mobile a").forEach(link => {
 
 //effect FADE elements
 document.addEventListener('DOMContentLoaded', function () {
-    AOS.init({
-      duration: 1200,      // duração da animação (ms)
-      easing: 'ease-out', // suavização
-      once: false,         // anima só na primeira vez
-      offset: 80,         // dispara um pouco antes do elemento entrar
-      mirror: true       // não reanima ao subir a página
-    });
+  AOS.init({
+    duration: 1200,      // duração da animação (ms)
+    easing: 'ease-out', // suavização
+    once: false,         // anima só na primeira vez
+    offset: 80,         // dispara um pouco antes do elemento entrar
+    mirror: true       // não reanima ao subir a página
+  });
+});
+
+//fade de imagens do banner principal
+// 1) Pegue os <img> existentes (na ordem que aparecem)
+const slots = Array.from(document.querySelectorAll(".galeria-alunos img.foto"));
+
+const imagesBySlot = [
+  ["./assets/alunos/aluno1.webp", "./assets/alunos/aluno5.webp", "./assets/alunos/aluno9.webp"],
+  ["./assets/alunos/aluno2.webp", "./assets/alunos/aluno6.webp", "./assets/alunos/aluno10.webp"],
+  ["./assets/alunos/aluno3.webp", "./assets/alunos/aluno7.webp", "./assets/alunos/aluno11.webp"],
+  ["./assets/alunos/aluno4.webp", "./assets/alunos/aluno8.webp", "./assets/alunos/aluno12.webp"],
+];
+
+const intervalMs = 3500;
+
+// índice atual por slot
+const idx = new Array(slots.length).fill(0);
+
+// preload inicial (ok manter)
+imagesBySlot.flat().forEach(src => { const i = new Image(); i.src = src; });
+
+async function preloadAndDecode(src) {
+  const im = new Image();
+  im.src = src;
+
+  // espera carregar
+  await new Promise((res, rej) => {
+    im.onload = res;
+    im.onerror = rej;
   });
 
-  //fade de imagens do banner principal
-  // 1) Pegue os <img> existentes (na ordem que aparecem)
-  const slots = Array.from(document.querySelectorAll(".galeria-alunos img.foto"));
+  // tenta decodificar (melhora MUITO no iOS)
+  if (im.decode) {
+    try { await im.decode(); } catch { }
+  }
+}
 
-  // 2) Defina as listas de imagens para cada slot (pode ser diferente por slot)
-  const imagesBySlot = [
-    ["./assets/alunos/aluno1.webp", "./assets/alunos/aluno5.webp", "./assets/alunos/aluno9.webp"],
-    ["./assets/alunos/aluno2.webp", "./assets/alunos/aluno6.webp", "./assets/alunos/aluno10.webp"],
-    ["./assets/alunos/aluno3.webp", "./assets/alunos/aluno7.webp", "./assets/alunos/aluno11.webp"],
-    ["./assets/alunos/aluno4.webp", "./assets/alunos/aluno8.webp", "./assets/alunos/aluno12.webp"],
-  ];
+async function swapImage(slotIndex) {
+  const img = slots[slotIndex];
+  const list = imagesBySlot[slotIndex] || [];
+  if (!img || list.length < 2) return;
 
-  const intervalMs = 3500;   // tempo entre trocas
-  const fadeMs = 600;        // deve bater com o transition do CSS (.6s)
+  const nextIndex = (idx[slotIndex] + 1) % list.length;
+  const nextSrc = list[nextIndex];
 
-  // opcional: pré-carregar pra evitar "piscada"
-  imagesBySlot.flat().forEach(src => { const i = new Image(); i.src = src; });
-
-  // índice atual por slot
-  const idx = new Array(slots.length).fill(0);
-
-  function swapImage(slotIndex) {
-    const img = slots[slotIndex];
-    const list = imagesBySlot[slotIndex] || [];
-    if (!img || list.length < 2) return;
-
-    idx[slotIndex] = (idx[slotIndex] + 1) % list.length;
-    const nextSrc = list[idx[slotIndex]];
-
-    // fade-out
-    img.classList.add("is-fading");
-
-    // troca no meio do fade, depois volta (fade-in)
-    setTimeout(() => {
-      img.src = nextSrc;
-      img.classList.remove("is-fading");
-    }, fadeMs);
+  // garante que a próxima imagem está pronta antes do fade
+  try {
+    await preloadAndDecode(nextSrc);
+  } catch {
+    // se falhar, ainda tenta trocar (não trava)
   }
 
-  // troca todos ao mesmo tempo
-  setInterval(() => {
-    for (let i = 0; i < slots.length; i++) swapImage(i);
-  }, intervalMs);
+  // 1) fade-out
+  img.classList.add("is-fading");
 
-  //altera imagem da seção "realizar seu sonho"
-  document.addEventListener("DOMContentLoaded", () => {
+  // 2) quando terminar o fade-out, troca src e faz fade-in
+  const onEnd = (e) => {
+    if (e.propertyName !== "opacity") return;
+    img.removeEventListener("transitionend", onEnd);
+
+    img.src = nextSrc;
+    idx[slotIndex] = nextIndex;
+
+    // garante que o browser “registre” a troca antes de voltar opacidade
+    requestAnimationFrame(() => {
+      img.classList.remove("is-fading");
+    });
+  };
+
+  img.addEventListener("transitionend", onEnd);
+}
+
+// loop sem overlap (mais estável que setInterval no mobile)
+async function runLoop() {
+  for (let i = 0; i < slots.length; i++) {
+    // roda em paralelo
+    swapImage(i);
+  }
+  setTimeout(runLoop, intervalMs);
+}
+
+runLoop();
+
+
+//altera imagem da seção "realizar seu sonho"
+document.addEventListener("DOMContentLoaded", () => {
   const container = document.querySelector(".right-dreams");
   const imgs = Array.from(container.querySelectorAll(".dreams-img"));
 
@@ -156,7 +194,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // tenta dar play (pode ser bloqueado no mobile; o controls resolve)
-    player.play().catch(() => {});
+    player.play().catch(() => { });
   };
 
   function closeDialog() {

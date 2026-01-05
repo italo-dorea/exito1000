@@ -130,7 +130,8 @@
   width: 50%;
   display: flex;
   gap: 0.5rem;
-  height: fit-content;
+  height: auto; 
+  align-items: stretch;
 }
 
 /* colunas esquerda e direita */
@@ -139,6 +140,7 @@
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  align-items: stretch;
 }
 
 /* linha de baixo com 2 fotos lado a lado */
@@ -152,14 +154,16 @@
 /* estilo base das imagens */
 .foto {
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
   object-position: top center;
   display: block;
   border-radius: 12px;
   box-shadow: #969696 0px 0px 2px 0px;
-  opacity: 1;
   transition: opacity .6s ease;
+  will-change: opacity;
+  backface-visibility: hidden;
+  transform: translateZ(0); /* força GPU no Safari */
 }
 
 /* 2) controle o tamanho por aspecto (mobile principalmente) */
@@ -189,7 +193,7 @@
 }
 
 .foto.is-fading {
-  opacity: 0.07 !important;
+  opacity: 0 !important;  
 }
 
 @media (max-width: 768px) {
@@ -275,6 +279,7 @@
 
   .foto {
     border-radius: 10px;
+    height: 100%;
   }
 
   .foto-grande,
