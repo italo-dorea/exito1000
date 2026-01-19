@@ -69,7 +69,9 @@ if ($plano !== '') {
 }
 
 // Monta mensagem
-$time = date('d/m/Y H:i:s');
+$time = new DateTime('now', new DateTimeZone('America/Sao_Paulo'));
+$timeFormatted = $time->format('d/m/Y H:i:s');
+
 
 $message = '
 <html>
@@ -79,7 +81,7 @@ $message = '
 </head>
 <body style="font-family: Arial, sans-serif; line-height: 1.5;">
   <h2>Novo envio recebido (Checkout)</h2>
-  <p><strong>Data/Hora:</strong> ' . htmlspecialchars($time) . '</p>
+  <p><strong>Data/Hora:</strong> ' . htmlspecialchars($timeFormatted) . '</p>
   <hr />
 
   <h3>Dados do cliente</h3>
