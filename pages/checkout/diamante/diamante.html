@@ -398,7 +398,12 @@
             <p class="copy-footer">© 2026 <span itemprop="name">Êxito 1000</span> | Todos Os Direitos Reservados</p>
         </div>
     </footer>
-    <script src="../../../utils/form.js"></script>
+    <script src="../../../utils/forms.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            initCheckoutForm({ planType: 'Diamante', paymentMethod: 'Boleto' });
+        });
+    </script>
 </body>
 
 </html>
