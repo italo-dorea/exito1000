@@ -120,13 +120,22 @@ $message = '
 $headers  = "MIME-Version: 1.0\r\n";
 $headers .= "Content-type: text/html; charset=UTF-8\r\n";
 
+// Define o remetente oficial (deve ser do meio domínio)
+$emailFrom = "no-reply@redacaoexito1000.com.br";
+
 // Use FROM do seu domínio para reduzir chance de spam/bloqueio
-$headers .= "From: Êxito 1000 <no-reply@redacaoexito1000.com.br>\r\n";
+$headers .= "From: Êxito 1000 <" . $emailFrom . ">\r\n";
 
 // Reply-To: responder direto para o cliente
 $headers .= "Reply-To: " . $email . "\r\n";
 
-$sent = mail($to, $subject, $message, $headers);
+// Headers adicionais que ajudam a não cair no SPAM
+$headers .= "Return-Path: " . $emailFrom . "\r\n"; 
+$headers .= "Sender: " . $emailFrom . "\r\n";
+$headers .= "X-Mailer: PHP/" . phpversion() . "\r\n";
+
+// O parâmetro "-f" força o Return-Path no envelope do e-mail (essencial para SPF)
+$sent = mail($to, $subject, $message, $headers, "-f" . $emailFrom);
 
 if ($sent) {
   echo json_encode(['status' => 'success', 'message' => '✅ Dados enviados com sucesso!']);
