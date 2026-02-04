@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Sucesso PIX | Exito 1000</title>
+
+    <!-- SEO básico -->
+    <meta name="description" content="Pagamento via PIX - Curso de redação Êxito 1000" />
+    <meta name="robots" content="noindex, nofollow" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://redacaoexito1000.com.br/" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="../../assets/iconlogo.svg" type="image/svg+xml" />
+
+    <!-- CSS principal -->
+    <link rel="stylesheet" href="../../reset.css" />
+    <link rel="stylesheet" href="../../global.css" />
+    <link rel="stylesheet" href="../../pages/sucesso/sucesso.css" />
+    <link rel="stylesheet" href="../../styles/footer.css" />
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YR1QMVE9N9"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-YR1QMVE9N9');
+    </script>
+
+    <!-- icones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        .pix-container {
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .pix-key-box {
+            border: 1px solid #bbf7d0;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem auto;
+            max-width: 500px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .pix-key-text {
+            font-family: monospace;
+            font-size: 1.1rem;
+            color: #166534;
+            word-break: break-all;
+        }
+
+        .btn-copy-pix {
+            background-color: #005B35;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: background-color 0.2s;
+        }
+
+        .btn-copy-pix:hover {
+            background-color: #004d2c;
+        }
+    </style>
+</head>
+
+
+<body>
+    <header class="header-diamante-page">
+        <!-- Botão desktop -->
+        <a href="/">
+            <button class="btn-voltar-checkout"> <i class="fa-solid fa-arrow-left" style="color: #ffffff;"></i>Voltar
+                para o site</button>
+        </a>
+        <img src="../../assets/logo.svg" alt="Logo Exito 1000" class="logo-header" />
+    </header>
+    <main class="main-checkout-diamante">
+        <section class="title-checkout-container">
+            <p>Parabéns!🎉 <br />Seus dados foram enviados com sucesso.</p>
+
+            <div class="pix-container">
+                <h2>Pague de forma segura e prática com PIX.</h2>
+
+                <div class="pix-key-box">
+                    <p>Chave PIX CNPJ:</p>
+                    <span class="pix-key-text" id="pixKey">42.866.413/0001-01</span>
+
+                    <button class="btn-copy-pix" onclick="copyPix()">
+                        <i class="fa-regular fa-copy"></i> Copiar chave PIX
+                    </button>
+                </div>              
+            </div>
+
+            <h2 style="margin-top: 3rem;">Após o pagamento, envie o comprovante para nosso <a
+                    href="https://api.whatsapp.com/send?phone=5571996888181" target="_blank"
+                    style="font-weight: 600; color: #005B35;"><i class="fa-brands fa-whatsapp"
+                        style="color: #005B35; padding-right: 2px;"></i>WhatsApp</a></span></h2>
+        </section>
+    </main>
+    <footer class="bg-footer" itemscope itemtype="https://schema.org/Organization">
+        <div class="container-nav-footer">
+            <nav>
+                <p class="nav-footer-title">A Êxito 1000</p>
+                <ul class="nav-footer">
+                    <li><a href="#metodo">Método</a></li>
+                    <li><a href="#professor">Sobre o Curso</a></li>
+                    <li><a href="#planos">Planos</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="logo-footer">
+            <img src="../../assets/logo.svg" alt="Logo Exito 1000" />
+            <a href="https://www.instagram.com/redacaoexito1000/" target="_blank">
+                <img src="../../assets/icon/icon-insta.svg" alt="Logo instagram" />
+            </a>
+        </div>
+        <div>
+            <p class="copy-footer">© 2026 <span itemprop="name">Êxito 1000</span> | Todos Os Direitos Reservados</p>
+        </div>
+    </footer>
+    <!-- <script src="../../utils/form.js"></script> --> <!-- Não precisa do form.js aqui por enquanto -->
+
+    <script>
+        function copyPix() {
+            const pixKey = "42.866.413/0001-01";
+            navigator.clipboard.writeText(pixKey).then(() => {
+                const btn = document.querySelector('.btn-copy-pix');
+                const originalHtml = btn.innerHTML;
+
+                btn.innerHTML = '<i class="fa-solid fa-check"></i> Copiado!';
+                btn.style.backgroundColor = '#166534';
+
+                setTimeout(() => {
+                    btn.innerHTML = originalHtml;
+                    btn.style.backgroundColor = '';
+                }, 2000);
+            }).catch(err => {
+                console.error('Erro ao copiar:', err);
+                alert('Não foi possível copiar automaticamente. A chave é: ' + pixKey);
+            });
+        }
+    </script>
+</body>
+
+</html>

@@ -226,7 +226,11 @@ async function initCheckoutForm({ planType, paymentMethod }) {
             }
 
             // Success
-            window.location.href = "/pages/sucesso/sucesso.html";
+            if (paymentMethod === 'PIX') {
+                window.location.href = "/pages/sucesso/sucesso-pix.html";
+            } else {
+                window.location.href = "/pages/sucesso/sucesso.html";
+            }
 
         } catch (err) {
             console.error(err);
