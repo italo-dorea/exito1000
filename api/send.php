@@ -63,9 +63,9 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 $to = "contato@redacaoexito1000.com.br";
 
 // Assunto
-$subject = "📥 Novo pedido/contato pelo checkout - Êxito 1000";
+$subject = "📥 Novo Pedido (Checkout) - Êxito 1000";
 if ($plano !== '') {
-  $subject .= " | Plano: " . $plano;
+  $subject .= " | [" . $plano . "]";
 }
 
 // Monta mensagem
@@ -74,44 +74,63 @@ $timeFormatted = $time->format('d/m/Y H:i:s');
 
 
 $message = '
+<!DOCTYPE html>
 <html>
 <head>
   <meta charset="UTF-8" />
-  <title>Novo envio - Êxito 1000</title>
+  <title>Novo Pedido - Êxito 1000</title>
+  <style>
+    body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; background-color: #f4f7f6; margin: 0; padding: 0; }
+    .container { max-width: 600px; margin: 20px auto; background-color: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+    .header { background-color: #005B35; color: #ffffff; padding: 25px 20px; text-align: center; }
+    .header h2 { margin: 0; font-size: 24px; font-weight: 600; }
+    .header p { margin: 5px 0 0; font-size: 14px; opacity: 0.9; }
+    .content { padding: 30px 20px; }
+    .section-title { color: #005B35; font-size: 18px; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; margin-top: 0; margin-bottom: 15px; }
+    .data-table { width: 100%; border-collapse: collapse; margin-bottom: 25px; }
+    .data-table td { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 15px; color: #333; }
+    .data-table td strong { color: #555; display: inline-block; width: 130px; }
+    .data-table tr:last-child td { border-bottom: none; }
+    .footer { background-color: #f8fafc; padding: 15px 20px; text-align: center; color: #64748b; font-size: 12px; border-top: 1px solid #e2e8f0; }
+  </style>
 </head>
-<body style="font-family: Arial, sans-serif; line-height: 1.5;">
-  <h2>Novo envio recebido (Checkout)</h2>
-  <p><strong>Data/Hora:</strong> ' . htmlspecialchars($timeFormatted) . '</p>
-  <hr />
+<body>
+  <div class="container">
+    <div class="header">
+      <h2>Novo Pedido Recebido</h2>
+      <p>' . htmlspecialchars($timeFormatted) . '</p>
+    </div>
+    
+    <div class="content">
+      <h3 class="section-title">Informações do Pedido</h3>
+      <table class="data-table">
+        <tr><td><strong>Plano Escolhido:</strong> <span style="color:#005B35; font-weight:bold;">' . htmlspecialchars($plano ?: 'Não especificado') . '</span></td></tr>
+        <tr><td><strong>Indicação:</strong> ' . htmlspecialchars($partnerReferral ?: 'Nenhuma') . '</td></tr>
+      </table>
 
-  <h3>Dados do cliente</h3>
-  <p><strong>Nome completo:</strong> ' . htmlspecialchars($nomeCompleto) . '</p>
-  <p><strong>E-mail:</strong> ' . htmlspecialchars($email) . '</p>
-  <p><strong>CPF:</strong> ' . htmlspecialchars($cpf) . '</p>
-  <p><strong>Telefone:</strong> ' . htmlspecialchars($telefone) . '</p>
+      <h3 class="section-title">Dados do Aluno</h3>
+      <table class="data-table">
+        <tr><td><strong>Nome:</strong> ' . htmlspecialchars($nomeCompleto) . '</td></tr>
+        <tr><td><strong>E-mail:</strong> <a href="mailto:' . htmlspecialchars($email) . '" style="color:#005B35; text-decoration:none;">' . htmlspecialchars($email) . '</a></td></tr>
+        <tr><td><strong>Telefone:</strong> ' . htmlspecialchars($telefone) . '</td></tr>
+        <tr><td><strong>CPF:</strong> ' . htmlspecialchars($cpf) . '</td></tr>
+      </table>
 
-  <hr />
+      <h3 class="section-title">Endereço</h3>
+      <table class="data-table">
+        <tr><td><strong>CEP:</strong> ' . htmlspecialchars($cep) . '</td></tr>
+        <tr><td><strong>Endereço:</strong> ' . htmlspecialchars($endereco) . ', Nº ' . htmlspecialchars($numero) . '</td></tr>
+        <tr><td><strong>Complemento:</strong> ' . htmlspecialchars($complemento) . '</td></tr>
+        <tr><td><strong>Bairro:</strong> ' . htmlspecialchars($bairro) . '</td></tr>
+        <tr><td><strong>Cidade/UF:</strong> ' . htmlspecialchars($city) . ' - ' . htmlspecialchars($state) . '</td></tr>
+        <tr><td><strong>Referência:</strong> ' . htmlspecialchars($referencia) . '</td></tr>
+      </table>
+    </div>
 
-  <h3>Endereço</h3>
-  <p><strong>CEP:</strong> ' . htmlspecialchars($cep) . '</p>
-  <p><strong>Endereço:</strong> ' . htmlspecialchars($endereco) . '</p>
-  <p><strong>Número:</strong> ' . htmlspecialchars($numero) . '</p>
-  <p><strong>Complemento:</strong> ' . htmlspecialchars($complemento) . '</p>
-  <p><strong>Bairro:</strong> ' . htmlspecialchars($bairro) . '</p>
-  <p><strong>Estado:</strong> ' . htmlspecialchars($state) . '</p>
-  <p><strong>Cidade:</strong> ' . htmlspecialchars($city) . '</p>
-  <p><strong>Ponto de referência:</strong> ' . htmlspecialchars($referencia) . '</p>
-
-  <hr />
-
-  <h3>Informações do pedido</h3>
-  <p><strong>Plano:</strong> ' . htmlspecialchars($plano ?: '-') . '</p>
-  <p><strong>Indicação:</strong> ' . htmlspecialchars($partnerReferral ?: '-') . '</p>
-
-  <hr />
-  <p style="color:#666; font-size: 12px;">
-    Enviado automaticamente pelo formulário do site Êxito 1000.
-  </p>
+    <div class="footer">
+      Este e-mail foi gerado automaticamente pelo Checkout da Êxito 1000.
+    </div>
+  </div>
 </body>
 </html>
 ';
@@ -140,7 +159,7 @@ $sent = mail($to, $subject, $message, $headers, "-f" . $emailFrom);
 if ($sent) {
   echo json_encode(['status' => 'success', 'message' => '✅ Dados enviados com sucesso!']);
 } else {
-  echo json_encode(['status' => 'error', 'message' => '❌ Falha ao enviar e-mail. Verifique a configuração do servidor.']);
+  echo json_encode(['status' => 'error', 'message' => '❌ Falha ao enviar e-mail. A hospedagem falhou no envio.']);
 }
 
 exit;

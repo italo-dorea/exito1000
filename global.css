@@ -9,7 +9,8 @@ body {
   padding: 0;
   width: 100%;
   max-width: 100%;
-  overflow-x: hidden; /* corta qualquer coisa que tente passar */
+  overflow-x: hidden;
+  /* corta qualquer coisa que tente passar */
 
   font-family: 'Montserrat', 'Inter', sans-serif;
   font-weight: 100;
@@ -28,9 +29,21 @@ b,
 strong {
   font-weight: 800;
 }
+
 button:hover {
   cursor: pointer;
   transform: scale(1.02);
   transition: ease-in 0.2s;
 }
 
+/* Utilitários - Otimização de Performance e Texto */
+.gpu-accelerated {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.no-wrap {
+  white-space: nowrap;
+}

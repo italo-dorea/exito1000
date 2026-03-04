@@ -105,7 +105,7 @@
 
 .video-planos {
   width: 70%;
-  
+
   height: auto;
   object-fit: cover;
   object-position: top center;
@@ -130,7 +130,7 @@
   width: 50%;
   display: flex;
   gap: 0.5rem;
-  height: auto; 
+  height: auto;
   align-items: stretch;
 }
 
@@ -160,10 +160,11 @@
   display: block;
   border-radius: 12px;
   box-shadow: #969696 0px 0px 2px 0px;
-  transition: opacity .6s ease;
+  transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1);
   will-change: opacity;
   backface-visibility: hidden;
-  transform: translateZ(0); /* força GPU no Safari */
+  transform: translateZ(0);
+  /* força GPU no Safari */
 }
 
 /* 2) controle o tamanho por aspecto (mobile principalmente) */
@@ -193,7 +194,7 @@
 }
 
 .foto.is-fading {
-  opacity: 0 !important;  
+  opacity: 0 !important;
 }
 
 @media (max-width: 768px) {
@@ -236,9 +237,11 @@
     font-size: 0.8rem;
     padding-block: 14px;
   }
-.video-planos {
-  width: 100%;
-}
+
+  .video-planos {
+    width: 100%;
+  }
+
   /* avaliação estrelas */
   .avaliacao-container {
     flex-direction: row;
@@ -269,7 +272,7 @@
     max-width: 420px;
     align-self: center;
   }
-  
+
 
   .galeria-col,
   .linha-baixo {

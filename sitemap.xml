@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <!-- Home Page -->
+    <url>
+        <loc>https://redacaoexito1000.com.br/</loc>
+        <lastmod>2026-03-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <!-- Checkout Unificado Dinâmico (parametros principais) -->
+    <url>
+        <loc>https://redacaoexito1000.com.br/pages/checkout/index?plano=premium&amp;metodo=pix</loc>
+        <lastmod>2026-03-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://redacaoexito1000.com.br/pages/checkout/index?plano=premium&amp;metodo=boleto</loc>
+        <lastmod>2026-03-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+        <url>
+        <loc>https://redacaoexito1000.com.br/pages/checkout/index?plano=diamante&amp;metodo=pix</loc>
+        <lastmod>2026-03-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://redacaoexito1000.com.br/pages/checkout/index?plano=diamante&amp;metodo=boleto</loc>
+        <lastmod>2026-03-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <!-- Páginas de Sucesso -->
+    <url>
+        <loc>https://redacaoexito1000.com.br/pages/sucesso/sucesso</loc>
+        <lastmod>2026-03-02</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://redacaoexito1000.com.br/pages/sucesso/sucesso-pix</loc>
+        <lastmod>2026-03-02</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.5</priority>
+    </url>
+</urlset>

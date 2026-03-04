@@ -1,0 +1,12 @@
+RewriteEngine On
+
+# 1. Forçar o redirecionamento (Padrão 301 SEO) de páginas com .html para URL limpas
+# Se o Request for um .html (mas não for raiz), e a digitação foi manual, manda pra URL limpa
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s([^.]+)\.html [NC]
+RewriteRule ^ %1 [R=301,L]
+
+# 2. Servir os arquivos internamente .html, mas a URL fica limpa (ex: /pages/checkout/index)
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.*)$ $1.html [L]

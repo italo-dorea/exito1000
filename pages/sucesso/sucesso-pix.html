@@ -88,15 +88,16 @@
 <body>
     <header class="header-diamante-page">
         <!-- Botão desktop -->
-        <a href="/">
-            <button class="btn-voltar-checkout"> <i class="fa-solid fa-arrow-left" style="color: #ffffff;"></i>Voltar
+        <a href="/" aria-label="Voltar para a página inicial">
+            <button class="btn-voltar-checkout" aria-label="Voltar para o site principal"> <i
+                    class="fa-solid fa-arrow-left" style="color: #ffffff;" aria-hidden="true"></i>Voltar
                 para o site</button>
         </a>
-        <img src="../../assets/logo.svg" alt="Logo Exito 1000" class="logo-header" />
+        <img src="../../assets/logo.svg" alt="Logotipo Oficial do Curso Êxito 1000" class="logo-header" />
     </header>
-    <main class="main-checkout-diamante">
+    <main class="main-checkout-diamante" aria-label="Confirmação de Compra por Pix">
         <section class="title-checkout-container">
-            <p>Parabéns!🎉 <br />Seus dados foram enviados com sucesso.</p>
+            <p>Parabéns!🎉 <br />Sua chave PIX foi gerada com sucesso!</p>
 
             <div class="pix-container">
                 <h2>Pague de forma segura e prática com PIX.</h2>
@@ -105,16 +106,23 @@
                     <p>Chave PIX CNPJ:</p>
                     <span class="pix-key-text" id="pixKey">42.866.413/0001-01</span>
 
-                    <button class="btn-copy-pix" onclick="copyPix()">
-                        <i class="fa-regular fa-copy"></i> Copiar chave PIX
+                    <button id="btn-copy-pix" class="btn-copy" onclick="copyPix()" aria-label="Copiar código Pix">
+                        <i class="fa-regular fa-copy" aria-hidden="true"></i> Copiar código Pix
                     </button>
-                </div>              
+                </div>
+                <a href="https://api.whatsapp.com/send?phone=5571996888181" target="_blank"
+                    aria-label="Enviar comprovante de pagamento via WhatsApp">
+                    <button class="btn-generate-boleto" style="width: 100%; margin-top: 24px;">
+                        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Enviar Comprovante
+                    </button>
+                </a>
             </div>
 
-            <h2 style="margin-top: 3rem;">Após o pagamento, envie o comprovante para nosso <a
+            <h2 style="margin-top: 3rem;">Dúvidas? Fale com a nossa equipe no <a
                     href="https://api.whatsapp.com/send?phone=5571996888181" target="_blank"
-                    style="font-weight: 600; color: #005B35;"><i class="fa-brands fa-whatsapp"
-                        style="color: #005B35; padding-right: 2px;"></i>WhatsApp</a></span></h2>
+                    style="font-weight: 600; color: #005B35;"
+                    aria-label="Entrar em contato com o suporte via WhatsApp"><i class="fa-brands fa-whatsapp"
+                        style="color: #005B35; padding-right: 2px;" aria-hidden="true"></i>WhatsApp</a></h2>
         </section>
     </main>
     <footer class="bg-footer" itemscope itemtype="https://schema.org/Organization">
@@ -129,17 +137,15 @@
             </nav>
         </div>
         <div class="logo-footer">
-            <img src="../../assets/logo.svg" alt="Logo Exito 1000" />
-            <a href="https://www.instagram.com/redacaoexito1000/" target="_blank">
-                <img src="../../assets/icon/icon-insta.svg" alt="Logo instagram" />
+            <img src="../../assets/logo.svg" alt="Símbolo oficial Êxito 1000" />
+            <a href="https://www.instagram.com/redacaoexito1000/" target="_blank" aria-label="Acesse nosso Instagram">
+                <img src="../../assets/icon/icon-insta.svg" alt="Instagram do curso de redação Êxito 1000" />
             </a>
         </div>
         <div>
             <p class="copy-footer">© 2026 <span itemprop="name">Êxito 1000</span> | Todos Os Direitos Reservados</p>
         </div>
     </footer>
-    <!-- <script src="../../utils/form.js"></script> --> <!-- Não precisa do form.js aqui por enquanto -->
-
     <script>
         function copyPix() {
             const pixKey = "42.866.413/0001-01";

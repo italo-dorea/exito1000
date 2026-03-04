@@ -106,12 +106,13 @@
             </ul>
         </nav>
         <!-- Botão desktop -->
-        <a href="https://plataforma.redacaoexito1000.com.br/student/login" target="_blank" class="btn-area-aluno">
-            <button>Área do Aluno</button>
+        <a href="https://plataforma.redacaoexito1000.com.br/student/login" target="_blank" class="btn-area-aluno"
+            aria-label="Acessar Área do Aluno">
+            <button aria-label="Acessar a área do aluno">Área do Aluno</button>
         </a>
         <!-- Ícone hambúrguer (mobile) -->
-        <button class="menu-toggle" aria-label="Abrir menu">
-            <img src="./assets/icon/icon-menu.svg" alt="Menu" />
+        <button class="menu-toggle" aria-label="Abrir menu de navegação">
+            <img src="./assets/icon/icon-menu.svg" alt="Ícone de Menu" />
         </button>
     </header>
     <!-- Menu mobile fullscreen -->
@@ -132,14 +133,13 @@
         <section class="section-banner">
             <div class="container-banner">
                 <h1 class="hero-title">
-                    A sua <span class="gradient-text">jornada<img class="flash" src="./assets/flash.svg"
-                            data-aos="fade-right" /></span><br>
+                    A sua <span class="gradient-text">jornada<img class="flash" src="./assets/flash.svg" /></span><br>
                     para o <span class="gradient-text">Êxito!</span>
                 </h1>
                 <h2>
                     Aprenda a escrever redação com uma metodologia <b>ativa</b> e <b>individualizada.</b>
                 </h2>
-                <a href="#planos">
+                <a href="#planos" aria-label="Conhecer os planos Êxito 1000">
                     <button>Conheça os planos</button>
                 </a>
                 <!-- <div class="avaliacao-container">
@@ -150,38 +150,47 @@
                     </div>
                 </div> -->
                 <div class="container-video-planos">
-                    <img src="./assets/video-banner.png" alt="play-planos" class="video-planos" onclick="openPlanVideo('#premium')" />
+                    <button aria-label="Assistir ao vídeo de apresentação dos planos"
+                        style="background:none; border:none; padding:0; cursor:pointer;"
+                        onclick="openPlanVideo('#premium')">
+                        <img src="./assets/video-banner.png" alt="Vídeo explicativo dos planos do curso de redação"
+                            class="video-planos" />
+                    </button>
                 </div>
             </div>
             <div class="galeria-alunos">
                 <!-- Coluna esquerda -->
                 <div class="galeria-col galeria-esquerda">
-                    <img src="./assets/alunos/aluno1.webp" alt="aluna 1" class="foto foto-grande">
-                    <img src="./assets/alunos/aluno2.webp" alt="aluna 2" class="foto foto-vertical">
+                    <img src="./assets/alunos/aluno1.webp" alt="Aluna Êxito 1000 feliz com a nota"
+                        class="foto foto-grande">
+                    <img src="./assets/alunos/aluno2.webp" alt="Aluna do curso de redação estudando"
+                        class="foto foto-vertical">
                 </div>
                 <!-- Coluna direita -->
                 <div class="galeria-col galeria-direita">
                     <div class="linha-baixo">
-                        <img src="./assets/alunos/aluno3.webp" alt="alunos 3" class="foto foto-menor">
-                        <img src="./assets/alunos/aluno4.webp" alt="aluna 4" class="foto foto-menor2">
+                        <img src="./assets/alunos/aluno3.webp" alt="Alunos estudando juntos para o ENEM"
+                            class="foto foto-menor">
+                        <img src="./assets/alunos/aluno4.webp" alt="Aluna mostrando seus resultados"
+                            class="foto foto-menor2">
                     </div>
                 </div>
             </div>
         </section>
-        <section class="universidades">
+        <section class="universidades" aria-label="Universidades aprovadas">
             <div class="universidades-track">
-                <img src="./assets/univ/ufba.svg" alt="UFBA" />
-                <img src="./assets/univ/bahiana.svg" alt="Bahiana" />
-                <img src="./assets/univ/uneb.svg" alt="UNEB" />
-                <img src="./assets/univ/uesb.svg" alt="UESB" />
-        
+                <img src="./assets/univ/ufba.svg" alt="Universidade Federal da Bahia - UFBA" />
+                <img src="./assets/univ/bahiana.svg" alt="Escola Bahiana de Medicina e Saúde Pública" />
+                <img src="./assets/univ/uneb.svg" alt="Universidade do Estado da Bahia - UNEB" />
+                <img src="./assets/univ/uesb.svg" alt="Universidade Estadual do Sudoeste da Bahia - UESB" />
+
                 <!-- duplicado para loop -->
                 <img src="./assets/univ/ufba.svg" alt="" aria-hidden="true" />
                 <img src="./assets/univ/bahiana.svg" alt="" aria-hidden="true" />
                 <img src="./assets/univ/uneb.svg" alt="" aria-hidden="true" />
                 <img src="./assets/univ/uesb.svg" alt="" aria-hidden="true" />
 
-                 <!-- duplicado para loop -->
+                <!-- duplicado para loop -->
                 <img src="./assets/univ/ufba.svg" alt="" aria-hidden="true" />
                 <img src="./assets/univ/bahiana.svg" alt="" aria-hidden="true" />
                 <img src="./assets/univ/uneb.svg" alt="" aria-hidden="true" />
@@ -198,18 +207,21 @@
                 <div class="card-metodo">
                     <h4>Código de cores que mostram seus</h4>
                     <div class="card-span">pontos fortes e fracos</div>
-                    <img class="card-metodo-image" src="./assets/redacao.webp" alt="metodologia">
+                    <img class="card-metodo-image" src="./assets/redacao.webp"
+                        alt="Sistema exclusivo de correção de redação por código de cores Êxito 1000">
                 </div>
                 <div class="card-metodo">
                     <h4>Correções feitas por corretores com</h4>
                     <div class="card-span">960, 980 e 1000 no ENEM</div>
-                    <img class="card-metodo-image" src="./assets/bia-corretora.webp" alt="corretora-bia">
+                    <img class="card-metodo-image" src="./assets/bia-corretora.webp"
+                        alt="Corretora da equipe avaliando redações com 1000 no ENEM">
                 </div>
             </div>
             <div class="card-metodo-prof">
                 <h4>Mentorias individuais</h4>
                 <div class="card-span">que te guiam para o <b>ÊXITO</b></div>
-                <img class="card-img-prof" src="./assets/prof-matheus.webp" alt="prof-matheus">
+                <img class="card-img-prof" src="./assets/prof-matheus.webp"
+                    alt="Mentoria individual com o Professor Matheus Costa">
             </div>
 
             <div class="faixa-container">
@@ -228,8 +240,9 @@
                         <b>+ corretores</b>
                     </h4>
                     <h3><span class="black-letter">Especialista em</span><br /> <span class="white-letter"><img
-                                class="checked" src="./assets/checked.svg" />redação</span> <span
-                            class="black-letter">para</span><br /> <span class="white-letter">vestibulares</span></h3>
+                                class="checked" src="./assets/checked.svg" alt="Ícone de aprovado" />redação</span>
+                        <span class="black-letter">para</span><br /> <span class="white-letter">vestibulares</span>
+                    </h3>
                     <p class="paragraph-white">Conhecido por sua paixão por transformar a escrita em aprovação, Matheus
                         Costa é o professor mentor à frente do nosso curso.<br />
                         <br />
@@ -251,67 +264,70 @@
             <div class="plans-title-metodo">
                 <h3 class="plans-metodo-title">Sob medida para sua nota 1000!</h3>
                 <h5 class="plans-title-description">Planos</h5>
-                
+
                 <!-- <hr class="plans-glow-line" /> -->
 
-                <a href="javascript:void(0)" onclick="openPlanVideo('#premium')" class="plan-video-planos">
+                <a href="javascript:void(0)" onclick="openPlanVideo('#premium')" class="plan-video-planos"
+                    aria-label="Assistir vídeo explicando as diferenças entre os planos">
                     Entenda as diferenças entre os planos (Clique aqui)
                 </a>
             </div>
             <div class="container-plains-cards">
-                <img class="selo" src="./assets/selo.svg" alt="selo" />
+                <img class="selo" src="./assets/selo.svg" alt="Selo de Garantia Êxito 1000" />
                 <div class="plan-1">
                     <h5 class="name-plan">Plano Diamante</h5>
                     <div class="faixa-plan-1">
                         <b>Mentoria individual toda semana</b><br />
                         com o prof. Matheus Costa.
-                        </div>
-                        <ul class="plan-list">
-                            <li class="plan-list-item">
-                                <img src="./assets/icon-check.svg" alt="icon" />
-                                Grupo da turma no Telegram;
-                            </li>
-                        
-                            <li class="plan-list-item">
-                                <img src="./assets/icon-check.svg" alt="icon" />
-                                Acesso à plataforma Êxito 1000;
-                            </li>
-                        
-                            <li class="plan-list-item">
-                                <img src="./assets/icon-check.svg" alt="icon" />
-                                Aulas ao vivo toda semana em grupo;
-                            </li>
-                        
-                            <li class="plan-list-item">
-                                <img src="./assets/icon-check.svg" alt="icon" />
-                                Simulado de redação mensal;
-                            </li>
-                        
-                            <li class="plan-list-item" style="font-weight: 500;">
-                                <img src="./assets/icon-check.svg" alt="icon" />
-                                Correção da redação ao vivo na mentoria;
-                            </li>
-                        
-                            <li class="plan-list-item" style="font-weight: 500;">
-                                <img src="./assets/icon-check.svg" alt="icon" />
-                                Redações ilimitadas;
-                            </li>
-                        
-                            <li class="plan-list-item" style="font-weight: 500;">
-                                <img src="./assets/icon-check.svg" alt="icon" />
-                                Simulado de redação bônus mensal;
-                            </li>
-                        
-                            <li class="plan-list-item" style="font-weight: 500;">
-                                <img src="./assets/icon-check.svg" alt="icon" />
-                                KIT EXCLUSIVO DIAMANTE
-                                <a href="javascript:void(0)" onclick="openPlanVideo('#diamante')" class="plan-video-link">
-                                    ( veja o vídeo )
-                                </a>                                
-                            </li>
-                        </ul>
+                    </div>
+                    <ul class="plan-list">
+                        <li class="plan-list-item">
+                            <img src="./assets/icon-check.svg" alt="icon" />
+                            Grupo da turma no Telegram;
+                        </li>
 
-                    <a href="https://api.whatsapp.com/send?phone=5571996888181" target="_blank">
+                        <li class="plan-list-item">
+                            <img src="./assets/icon-check.svg" alt="icon" />
+                            Acesso à plataforma Êxito 1000;
+                        </li>
+
+                        <li class="plan-list-item">
+                            <img src="./assets/icon-check.svg" alt="icon" />
+                            Aulas ao vivo toda semana em grupo;
+                        </li>
+
+                        <li class="plan-list-item">
+                            <img src="./assets/icon-check.svg" alt="Incluso:" />
+                            Simulado de redação mensal;
+                        </li>
+
+                        <li class="plan-list-item" style="font-weight: 500;">
+                            <img src="./assets/icon-check.svg" alt="icon" />
+                            Correção da redação ao vivo na mentoria;
+                        </li>
+
+                        <li class="plan-list-item" style="font-weight: 500;">
+                            <img src="./assets/icon-check.svg" alt="icon" />
+                            Redações ilimitadas;
+                        </li>
+
+                        <li class="plan-list-item" style="font-weight: 500;">
+                            <img src="./assets/icon-check.svg" alt="icon" />
+                            Simulado de redação bônus mensal;
+                        </li>
+
+                        <li class="plan-list-item" style="font-weight: 500;">
+                            <img src="./assets/icon-check.svg" alt="icon" />
+                            KIT EXCLUSIVO DIAMANTE
+                            <a href="javascript:void(0);" onclick="openPlanVideo('#diamante')" class="plan-video-link"
+                                aria-label="Veja o vídeo explicativo do Plano Diamante">
+                                <span class="no-wrap">( veja o vídeo )</span>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <a href="https://api.whatsapp.com/send?phone=5571996888181" target="_blank"
+                        aria-label="Entrar na lista de espera para o Plano Diamante via WhatsApp">
                         <button class="plan-button">Lista de espera</button>
                     </a>
                 </div>
@@ -323,47 +339,53 @@
                             <img src="./assets/icon-check.svg" alt="icon" />
                             Grupo da turma no Telegram;
                         </li>
-                
+
                         <li class="plan-list-item">
                             <img src="./assets/icon-check.svg" alt="icon" />
                             Acesso à plataforma Êxito 1000;
                         </li>
-                
+
                         <li class="plan-list-item">
                             <img src="./assets/icon-check.svg" alt="icon" />
                             Aulas ao vivo toda semana em grupo;
                         </li>
-                
+
                         <li class="plan-list-item">
                             <img src="./assets/icon-check.svg" alt="icon" />
                             Simulado de redação mensal;
                         </li>
-                
+
                         <li class="plan-list-item" style="font-weight: 500;">
                             <img src="./assets/icon-check.svg" alt="icon" />
                             Correção em até 3 dias úteis;
                         </li>
-                
+
                         <li class="plan-list-item" style="font-weight: 500;">
                             <img src="./assets/icon-check.svg" alt="icon" />
-                            8 redações mensais<span style="font-size: 0.9rem; align-items: center; font-style: italic;">(4 escritas e 4 reescritas);</span>
+                            8 redações mensais<span
+                                style="font-size: 0.9rem; align-items: center; font-style: italic;">(4 escritas e 4
+                                reescritas);</span>
                         </li>
-                
+
                         <li class="plan-list-item" style="font-weight: 500;">
                             <img src="./assets/icon-check.svg" alt="icon" />
-                            Mentoria de orientação<span style="font-size: 0.9rem; align-items: center; font-style: italic;">(uma única vez);</span>
+                            Mentoria de orientação<span
+                                style="font-size: 0.9rem; align-items: center; font-style: italic;">(uma única
+                                vez);</span>
                         </li>
-                
+
                         <li class="plan-list-item" style="font-weight: 500;">
                             <img src="./assets/icon-check.svg" alt="icon" />
                             KIT EXCLUSIVO PREMIUM
-                            <a href="javascript:void(0)" onclick="openPlanVideo('#premium')" class="plan-video-link">
-                                ( veja o vídeo )
+                            <a href="javascript:void(0);" onclick="openPlanVideo('#premium')" class="plan-video-link"
+                                aria-label="Veja o vídeo explicativo do Plano Premium">
+                                <span class="no-wrap">( veja o vídeo )</span>
                             </a>
                         </li>
                     </ul>
 
-                    <a href="https://api.whatsapp.com/send?phone=5571996888181" target="_blank">
+                    <a href="https://api.whatsapp.com/send?phone=5571996888181" target="_blank"
+                        aria-label="Fazer matrícula no Plano Premium via WhatsApp">
                         <button class="plan-button">Faça sua matrícula</button>
                     </a>
                 </div>
@@ -371,12 +393,13 @@
         </section>
         <section class="dreams-container">
             <div class="left-dreams">
-                <h4 class="title-left-dreams">Te ajudamos a<br /> <img class="checked-dream"
-                        src="./assets/checked.svg" />realizar o seu sonho</h4>
+                <h4 class="title-left-dreams">Te ajudamos a<br /> <img class="checked-dream" src="./assets/checked.svg"
+                        alt="Check de sonho realizado" />realizar o seu sonho</h4>
                 <h4 class="title-left-dreams-mobile">Te ajudamos a <img class="checked-dream-mobile"
-                        src="./assets/checked.svg" />realizar o seu sonho</h4>
+                        src="./assets/checked.svg" alt="Check de sonho realizado" />realizar o seu sonho</h4>
                 <p>A sua redação nota 1000 é o nosso objetivo</p>
-                <a href="https://api.whatsapp.com/send?phone=5571996888181" target="_blank">
+                <a href="https://api.whatsapp.com/send?phone=5571996888181" target="_blank"
+                    aria-label="Entrar em contato via WhatsApp">
                     <button class="btn-dreams">Faça sua matrícula</button>
                 </a>
             </div>
@@ -398,9 +421,9 @@
             </nav>
         </div>
         <div class="logo-footer">
-            <img src="./assets/logo.svg" alt="Logo Exito 1000" />
-            <a href="https://www.instagram.com/redacaoexito1000/" target="_blank">
-                <img src="./assets/icon/icon-insta.svg" alt="Logo instagram" />
+            <img src="./assets/logo.svg" alt="Símbolo oficial do Curso Êxito 1000" />
+            <a href="https://www.instagram.com/redacaoexito1000/" target="_blank" aria-label="Acessar nosso Instagram">
+                <img src="./assets/icon/icon-insta.svg" alt="Instagram do Êxito 1000" />
             </a>
         </div>
         <div>
@@ -409,13 +432,13 @@
     </footer>
     <dialog id="videoDialog" class="video-dialog" aria-label="Vídeo do plano">
         <button id="videoDialogClose" class="video-dialog-close" aria-label="Fechar">×</button>
-    
+
         <div class="video-dialog-body">
             <video id="videoDialogPlayer" controls playsinline preload="metadata"></video>
         </div>
     </dialog>
     <script src="./script.js?v=05012026"></script>
-    
-    </body>
-    
-    </html>
+
+</body>
+
+</html>
