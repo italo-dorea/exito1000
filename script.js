@@ -36,10 +36,10 @@ document.addEventListener('DOMContentLoaded', function () {
 const slots = Array.from(document.querySelectorAll(".galeria-alunos img.foto"));
 
 const imagesBySlot = [
-  ["./assets/alunos/aluno1.webp", "./assets/alunos/aluno5.webp", "./assets/alunos/aluno9.webp"],
-  ["./assets/alunos/aluno2.webp", "./assets/alunos/aluno6.webp", "./assets/alunos/aluno10.webp"],
-  ["./assets/alunos/aluno3.webp", "./assets/alunos/aluno7.webp", "./assets/alunos/aluno11.webp"],
-  ["./assets/alunos/aluno4.webp", "./assets/alunos/aluno8.webp", "./assets/alunos/aluno12.webp"],
+  ["./assets/alunos/IMG_4400.webp", "./assets/alunos/IMG_4401.webp", "./assets/alunos/IMG_4402.webp", "./assets/alunos/aluno1.webp", "./assets/alunos/aluno5.webp", "./assets/alunos/aluno9.webp"],
+  ["./assets/alunos/IMG_4404.webp", "./assets/alunos/IMG_4405.webp", "./assets/alunos/IMG_4406.webp", "./assets/alunos/aluno2.webp", "./assets/alunos/aluno6.webp", "./assets/alunos/aluno10.webp"],
+  ["./assets/alunos/IMG_4408.webp", "./assets/alunos/IMG_4409.webp", "./assets/alunos/IMG_4410.webp", "./assets/alunos/aluno3.webp", "./assets/alunos/aluno7.webp", "./assets/alunos/aluno11.webp"],
+  ["./assets/alunos/IMG_4411.webp", "./assets/alunos/IMG_4412.webp", "./assets/alunos/aluno4.webp", "./assets/alunos/aluno8.webp", "./assets/alunos/aluno12.webp"],
 ];
 
 const intervalMs = 3500;
@@ -119,10 +119,21 @@ document.addEventListener("DOMContentLoaded", () => {
   const imgs = Array.from(container.querySelectorAll(".dreams-img"));
 
   const sources = [
-    "./assets/alunos/aluno18.jpg",
-    "./assets/alunos/aluno15.jpg",
-    "./assets/alunos/aluno16.jpg",
-    "./assets/alunos/aluno17.jpg",
+    "./assets/alunos/IMG_4400.webp",
+    "./assets/alunos/IMG_4401.webp",
+    "./assets/alunos/IMG_4402.webp",
+    "./assets/alunos/IMG_4404.webp",
+    "./assets/alunos/IMG_4405.webp",
+    "./assets/alunos/IMG_4406.webp",
+    "./assets/alunos/IMG_4408.webp",
+    "./assets/alunos/IMG_4409.webp",
+    "./assets/alunos/IMG_4410.webp",
+    "./assets/alunos/IMG_4411.webp",
+    "./assets/alunos/IMG_4412.webp",
+    "./assets/alunos/aluno18.webp",
+    "./assets/alunos/aluno15.webp",
+    "./assets/alunos/aluno16.webp",
+    "./assets/alunos/aluno17.webp",
   ];
 
   const intervalMs = 3500;
