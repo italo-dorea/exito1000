@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Matrícula — Plano Premium | Êxito 1000</title>
+  <meta name="description"
+    content="Faça sua matrícula no Plano Premium do Curso de Redação Êxito 1000. Turmas ENEM, Bahiana e UNEB/UESB. Preencha o formulário e garanta sua vaga." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://redacaoexito1000.com.br/planos/premium.html" />
+
+  <link rel="icon" href="../assets/iconlogo.svg" type="image/svg+xml" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../reset.css" />
+  <link rel="stylesheet" href="../global.css" />
+  <link rel="stylesheet" href="./planos.css" />
+  <link rel="stylesheet" href="../styles/footer.css" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YR1QMVE9N9"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-YR1QMVE9N9');
+  </script>
+</head>
+
+<body>
+
+  <!-- ── Header ─────────────────────────────────────────────── -->
+  <header class="planos-header">
+    <a href="/" aria-label="Voltar para a página inicial">
+      <button class="btn-voltar-planos" aria-label="Voltar para o site principal">
+        <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+        Voltar para o site
+      </button>
+    </a>
+    <img src="../assets/logo.svg" alt="Logotipo do Curso Êxito 1000" class="logo-header" />
+  </header>
+
+  <!-- ── Main ───────────────────────────────────────────────── -->
+  <main class="planos-main" id="planos-main">
+
+    <!-- Título da página -->
+    <section class="planos-title-section">
+      <h1>Matrícula — <b style="color:#00335B;">Plano Premium</b></h1>
+      <p>Selecione sua turma e preencha os dados para garantir sua vaga</p>
+    </section>
+
+    <!-- Passo 1: Select de Interesse (100% width) -->
+    <div class="select-turma-row" role="group" aria-labelledby="label-turma">
+      <label id="label-turma" for="tipoTurma">
+        Selecione a turma do seu interesse
+      </label>
+      <div class="select-turma-wrapper">
+        <i class="fa-solid fa-graduation-cap icon-turma" aria-hidden="true"></i>
+        <select id="tipoTurma" name="tipoTurma" aria-required="true" required>
+          <option value="" selected disabled>Selecione sua turma...</option>
+          <option value="enem">ENEM</option>
+          <option value="bahiana">Bahiana (EBMSP)</option>
+          <option value="uneb">UNEB</option>
+          <option value="uesb">UESB</option>
+          <option value="enem_bahiana">ENEM + Bahiana</option>
+          <option value="enem_uneb">ENEM + UNEB</option>
+          <option value="enem_uesb">ENEM + UESB</option>
+          <option value="bahiana_uneb">Bahiana + UNEB</option>
+          <option value="bahiana_uesb">Bahiana + UESB</option>
+          <option value="uneb_uesb">UNEB + UESB</option>
+          <option value="enem_bahiana_uneb">ENEM + Bahiana + UNEB</option>
+          <option value="enem_bahiana_uesb">ENEM + Bahiana + UESB</option>
+          <option value="enem_uneb_uesb">ENEM + UNEB + UESB</option>
+          <option value="bahiana_uneb_uesb">Bahiana + UNEB + UESB</option>
+          <option value="enem_bahiana_uneb_uesb">ENEM + Bahiana + UNEB + UESB</option>
+        </select>
+        <i class="fa-solid fa-chevron-down chevron-turma" aria-hidden="true"></i>
+      </div>
+    </div>
+
+    <!-- Grid principal -->
+    <div class="planos-grid">
+
+      <!-- ── Coluna Esquerda: Formulário ────────────────────── -->
+      <form id="checkoutForm" class="form-col" novalidate>
+
+        <!-- Dados pessoais -->
+        <div class="form-section-header">
+          <h4>Seus Dados</h4>
+          <p>Preencha as informações abaixo para continuar</p>
+        </div>
+
+        <div class="checkout-grid">
+
+          <!-- Nome completo -->
+          <div class="field">
+            <label class="label" for="nomeCompleto">
+              Nome Completo <span class="req" aria-hidden="true">*</span>
+            </label>
+            <div class="control">
+              <i class="fa-regular fa-user icon" aria-hidden="true"></i>
+              <input id="nomeCompleto" name="nomeCompleto" type="text" class="input"
+                placeholder="Digite o seu nome completo" autocomplete="name"
+                aria-required="true" required />
+            </div>
+            <small class="hint" aria-live="polite"> </small>
+          </div>
+
+          <!-- E-mail -->
+          <div class="field">
+            <label class="label" for="email">
+              E-mail <span class="req" aria-hidden="true">*</span>
+            </label>
+            <div class="control">
+              <i class="fa-regular fa-envelope icon" aria-hidden="true"></i>
+              <input id="email" name="email" type="email" class="input"
+                placeholder="Digite o seu e-mail" autocomplete="email" inputmode="email"
+                aria-required="true" required />
+            </div>
+            <small class="hint" aria-live="polite"> </small>
+          </div>
+
+          <!-- CPF -->
+          <div class="field span-6">
+            <label class="label" for="cpf">
+              CPF <span class="req" aria-hidden="true">*</span>
+            </label>
+            <div class="control">
+              <i class="fa-regular fa-id-card icon" aria-hidden="true"></i>
+              <input id="cpf" name="cpf" type="text" class="input"
+                placeholder="000.000.000-00" autocomplete="off" inputmode="numeric"
+                aria-required="true" required />
+            </div>
+            <small class="hint" aria-live="polite"> </small>
+          </div>
+
+          <!-- Telefone -->
+          <div class="field span-6">
+            <label class="label" for="telefone">
+              Telefone / WhatsApp <span class="req" aria-hidden="true">*</span>
+            </label>
+            <div class="control">
+              <i class="fa-solid fa-phone icon" aria-hidden="true"></i>
+              <input id="telefone" name="telefone" type="tel" class="input"
+                placeholder="(00) 00000-0000" autocomplete="tel" inputmode="tel"
+                aria-required="true" required />
+            </div>
+            <small class="hint" aria-live="polite"> </small>
+          </div>
+
+          <!-- CEP -->
+          <div class="field span-5">
+            <label class="label" for="cep">
+              CEP <span class="req" aria-hidden="true">*</span>
+            </label>
+            <div class="control">
+              <i class="fa-regular fa-map icon" aria-hidden="true"></i>
+              <input id="cep" name="cep" type="text" class="input"
+                placeholder="00000-000" autocomplete="postal-code" inputmode="numeric"
+                aria-required="true" required />
+            </div>
+            <small class="hint" aria-live="polite"> </small>
+          </div>
+
+          <!-- Estado -->
+          <div class="field span-7">
+            <label class="label" for="state">
+              Estado <span class="req" aria-hidden="true">*</span>
+            </label>
+            <div class="control">
+              <i class="fa-regular fa-flag icon" aria-hidden="true"></i>
+              <select id="state" name="state" class="select" aria-required="true" required>
+                <option value="" selected disabled>Selecione o Estado</option>
+              </select>
+              <i class="fa-solid fa-chevron-down chevron" aria-hidden="true"></i>
+            </div>
+            <small class="hint" aria-live="polite"> </small>
+          </div>
+
+          <!-- Cidade -->
+          <div class="field">
+            <label class="label" for="city">
+              Cidade <span class="req" aria-hidden="true">*</span>
+            </label>
+            <div class="control">
+              <i class="fa-regular fa-building icon" aria-hidden="true"></i>
+              <select id="city" name="city" class="select" aria-required="true" required disabled>
+                <option value="" selected disabled>Selecione a Cidade</option>
+              </select>
+              <i class="fa-solid fa-chevron-down chevron" aria-hidden="true"></i>
+            </div>
+            <small class="hint" aria-live="polite"> </small>
+          </div>
+
+          <!-- Indicação -->
+          <div class="field">
+            <label class="label" for="partnerReferral">
+              Você recebeu indicação de algum parceiro?
+              <span class="req" aria-hidden="true">*</span>
+            </label>
+            <div class="control">
+              <i class="fa-regular fa-handshake icon" aria-hidden="true"></i>
+              <select id="partnerReferral" name="partnerReferral" class="select"
+                aria-required="true" required>
+                <option value="" selected disabled>Selecione a Indicação</option>
+                <option value="@soualicesouza">@soualicesouza</option>
+                <option value="@becamedicina">@becamedicina</option>
+                <option value="@studigabis">@studigabis</option>
+                <option value="@pedroestudies_">@pedroestudies_</option>
+                <option value="@juliafilgueiraa">@juliafilgueiraa</option>
+                <option value="@majuaabreu">@majuaabreu</option>
+                <option value="@tulio.studies">@tulio.studies</option>
+                <option value="@milidailylife">@milidailylife</option>
+                <option value="nao_veio_por_indicacao">Não vim por indicação de nenhum parceiro acima.</option>
+              </select>
+              <i class="fa-solid fa-chevron-down chevron" aria-hidden="true"></i>
+            </div>
+            <small class="hint" aria-live="polite"> </small>
+          </div>
+
+        </div><!-- /checkout-grid -->
+
+        <!-- Seção de Pagamento -->
+        <div class="payment-section">
+          <div class="form-section-header" style="border-bottom:1px solid #E5E7EB;margin-bottom:1rem;padding-bottom:1rem;">
+            <h4>Forma de Pagamento</h4>
+            <p>Pagamento exclusivamente via Boleto Bancário</p>
+          </div>
+
+          <div class="payment-method-card">
+            <div class="payment-header">
+              <div class="payment-icon-box">
+                <i class="fa-regular fa-file-lines" aria-hidden="true"></i>
+              </div>
+              <div class="payment-title-text">
+                <h5>Boleto Bancário</h5>
+                <p>Pague de forma segura e prática com boleto bancário. Após a confirmação do pedido, você receberá o boleto por e-mail.</p>
+              </div>
+            </div>
+            <div class="payment-info-list">
+              <div class="info-item">
+                <i class="fa-regular fa-clock" aria-hidden="true"></i>
+                <span><strong>Vencimento:</strong> 1 dia útil após a emissão.</span>
+              </div>
+              <div class="info-item">
+                <i class="fa-regular fa-circle-check" aria-hidden="true"></i>
+                <span>
+                  <strong>Confirmação:</strong> Até 2 dias úteis após o pagamento. Envie o comprovante pelo
+                  <a href="https://api.whatsapp.com/send?phone=5571996888181" target="_blank"
+                    rel="noopener noreferrer"
+                    style="font-weight:600;color:#005B35;">
+                    <i class="fa-brands fa-whatsapp" style="color:#00a80b;padding-right:2px;" aria-hidden="true"></i>
+                    WhatsApp
+                  </a>
+                </span>
+              </div>
+              <div class="cancel-policy-box">
+                <div class="cancel-header">
+                  <i class="fa-regular fa-circle-xmark" aria-hidden="true"></i>
+                  <span>
+                    <strong>Cancelamento:</strong> Você pode cancelar sua mensalidade a qualquer momento,
+                    desde que avise com pelo menos <strong>30 dias de antecedência.</strong>
+                  </span>
+                </div>
+                <div class="cancel-example">
+                  <p><strong>*Por exemplo:</strong> Se sua mensalidade vence todo dia 05 e você não deseja
+                    continuar, avise até o dia 05 do mês vigente. Esse mês ainda será cobrado normalmente
+                    e será o último.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Termos + botão -->
+          <div class="payment-footer">
+            <label class="terms-label" for="terms">
+              <input type="checkbox" id="terms" name="terms" aria-required="true" required />
+              <span>
+                Eu li e aceito os
+                <a href="../pages/politicas/" target="_blank" rel="noopener noreferrer"
+                  aria-label="Ler Termos de Uso e Política de Privacidade">
+                  Termos de Uso e Política de Privacidade
+                </a>.
+              </span>
+            </label>
+
+            <button type="submit" class="btn-submit-plano" id="btn-submit-plano"
+              aria-label="Finalizar matrícula no Plano Premium">
+              Finalizar Matrícula
+            </button>
+
+            <div class="security-info" role="note">
+              <span><i class="fa-solid fa-lock" aria-hidden="true"></i> Dados Protegidos</span>
+              <span><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> Envio Seguro</span>
+            </div>
+          </div>
+
+        </div><!-- /payment-section -->
+
+      </form><!-- /form-col -->
+
+      <!-- ── Coluna Direita: Painel Info Dinâmico ────────────── -->
+      <aside id="info-panel" class="info-panel" aria-live="polite" aria-label="Informações da turma selecionada">
+        <!-- Renderizado por planos.js -->
+      </aside>
+
+    </div><!-- /planos-grid -->
+
+  </main>
+
+  <!-- ── Footer ──────────────────────────────────────────────── -->
+  <footer class="bg-footer" itemscope itemtype="https://schema.org/Organization">
+    <div class="container-nav-footer">
+      <nav>
+        <p class="nav-footer-title">A Êxito 1000</p>
+        <ul class="nav-footer">
+          <li><a href="/#metodo">Método</a></li>
+          <li><a href="/#professor">Sobre o Curso</a></li>
+          <li><a href="/#planos">Planos</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="logo-footer">
+      <img src="../assets/logo.svg" alt="Símbolo oficial Êxito 1000" />
+      <a href="https://www.instagram.com/redacaoexito1000/" target="_blank" rel="noopener noreferrer"
+        aria-label="Acesse nosso Instagram">
+        <img src="../assets/icon/icon-insta.svg" alt="Instagram Êxito 1000" />
+      </a>
+    </div>
+    <div>
+      <p class="copy-footer">© 2026 <span itemprop="name">Êxito 1000</span> | Todos Os Direitos Reservados</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="./planos.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      initPlanosPage('premium');
+    });
+  </script>
+
+</body>
+</html>
