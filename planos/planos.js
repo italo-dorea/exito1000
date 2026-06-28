@@ -18,7 +18,7 @@ const TURMAS_SIMPLES = {
   enem: {
     nome: 'ENEM',
     tipo: 'enem',
-    inicio: '5 de julho de 2026',
+    inicio: '9 de julho de 2026',
     horario: 'Toda quinta-feira, às 20h',
     mensalidades: 5,
     primeiraParcela: '5 de julho de 2026',
@@ -30,7 +30,7 @@ const TURMAS_SIMPLES = {
   bahiana: {
     nome: 'Bahiana (EBMSP)',
     tipo: 'bahiana',
-    inicio: '5 de julho de 2026',
+    inicio: '15 de julho de 2026',
     horario: 'Toda quarta-feira, às 20h',
     mensalidades: 6,
     primeiraParcela: '5 de julho de 2026',
@@ -42,7 +42,7 @@ const TURMAS_SIMPLES = {
   uneb_uesb: {
     nome: 'UNEB & UESB',
     tipo: 'geral',
-    inicio: '5 de agosto de 2026',
+    inicio: '28 de julho de 2026',
     horario: 'Toda terça-feira, às 20h',
     mensalidades: 6,
     primeiraParcela: '5 de agosto de 2026',
@@ -214,7 +214,7 @@ function renderPanelSingle(panel, turmaId, planoTipo) {
         </li>` : `
         <li style="display:flex;align-items:flex-start;gap:8px;list-style:none;font-size:0.8rem;color:#4B5563;line-height:1.4;">
           <img src="${ICON_CHECK}" alt="" aria-hidden="true" style="width:16px;height:16px;flex-shrink:0;margin-top:2px;" />
-          Taxa de adesão
+          Taxa de adesão (alunos do 1º sem. de 2026 estão isentos)
         </li>`}
         <li style="display:flex;align-items:flex-start;gap:8px;list-style:none;font-size:0.8rem;color:#4B5563;line-height:1.4;">
           <img src="${ICON_CHECK}" alt="" aria-hidden="true" style="width:16px;height:16px;flex-shrink:0;margin-top:2px;" />
