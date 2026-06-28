@@ -205,16 +205,16 @@ function renderPanelSingle(panel, turmaId, planoTipo) {
       <ul style="padding:0;margin:0;display:flex;flex-direction:column;gap:6px;">
         <li style="display:flex;align-items:flex-start;gap:8px;list-style:none;font-size:0.8rem;color:#4B5563;line-height:1.4;">
           <img src="${ICON_CHECK}" alt="" aria-hidden="true" style="width:16px;height:16px;flex-shrink:0;margin-top:2px;" />
-          <strong>${turma.mensalidades} mensalidades</strong>&nbsp;— de ${turma.primeiraParcela} a ${turma.ultimaParcela}
+          ${turma.mensalidades} mensalidades — de ${turma.primeiraParcela} a ${turma.ultimaParcela}
         </li>
         ${turma.prazoAdesao ? `
         <li style="display:flex;align-items:flex-start;gap:8px;list-style:none;font-size:0.8rem;color:#92400E;background:#FFF7ED;border-radius:6px;padding:6px 8px;line-height:1.4;">
           <img src="${ICON_CHECK}" alt="" aria-hidden="true" style="width:16px;height:16px;flex-shrink:0;margin-top:2px;" />
-          Taxa de adesão até <strong>${turma.prazoAdesao}</strong> para garantir a vaga
+          Garanta sua vaga: taxa de adesão até ${turma.prazoAdesao}
         </li>` : `
         <li style="display:flex;align-items:flex-start;gap:8px;list-style:none;font-size:0.8rem;color:#4B5563;line-height:1.4;">
           <img src="${ICON_CHECK}" alt="" aria-hidden="true" style="width:16px;height:16px;flex-shrink:0;margin-top:2px;" />
-          Taxa de adesão (alunos do 1º sem. de 2026 estão isentos)
+          Taxa de adesão
         </li>`}
         <li style="display:flex;align-items:flex-start;gap:8px;list-style:none;font-size:0.8rem;color:#4B5563;line-height:1.4;">
           <img src="${ICON_CHECK}" alt="" aria-hidden="true" style="width:16px;height:16px;flex-shrink:0;margin-top:2px;" />
@@ -289,7 +289,7 @@ function renderPanelCombo(panel, turmaId, planoTipo) {
         <p class="adicional-badge-desc">
           Você paga a mensalidade <strong>integral da turma principal (${principal.nome})</strong>
           e apenas <strong>40% da mensalidade</strong> de cada turma adicional.
-          Além disso, apenas <strong>uma taxa de adesão</strong>, não múltiplas.
+          Além disso, apenas <strong>uma taxa de adesão</strong>.
         </p>
       </div>
 
@@ -309,7 +309,7 @@ function renderPanelCombo(panel, turmaId, planoTipo) {
       <ul style="padding:0;margin:0;display:flex;flex-direction:column;gap:6px;">
         <li style="display:flex;align-items:flex-start;gap:8px;list-style:none;font-size:0.8rem;color:#4B5563;line-height:1.4;">
           <img src="${ICON_CHECK}" alt="" aria-hidden="true" style="width:16px;height:16px;flex-shrink:0;margin-top:2px;" />
-          <strong>Uma</strong> taxa de adesão (não múltiplas)
+          Taxa de adesão
         </li>
         <li style="display:flex;align-items:flex-start;gap:8px;list-style:none;font-size:0.8rem;color:#4B5563;line-height:1.4;">
           <img src="${ICON_CHECK}" alt="" aria-hidden="true" style="width:16px;height:16px;flex-shrink:0;margin-top:2px;" />
