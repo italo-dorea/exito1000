@@ -18,121 +18,65 @@ const TURMAS_SIMPLES = {
   enem: {
     nome: 'ENEM',
     tipo: 'enem',
-    inicio: '09 de julho de 2026',
+    inicio: '5 de julho de 2026',
     horario: 'Toda quinta-feira, às 20h',
-    taxaAdesao: null,
-    descricao:
-      'Foco total nas competências de redação exigidas pelo ENEM, com abordagem profunda das 5 competências, ' +
-      'produção de repertório sociocultural e estratégias de alta pontuação.',
-    infos: [
-      'Turma exclusiva para o ENEM 2026',
-      'Estudo aprofundado das 5 competências',
-      'Produção de repertório sociocultural estratégico',
-      'Temas de atualidade e análise crítica',
-    ],
-  },
-  bahiana: {
-    nome: 'Bahiana (EBMSP)',
-    tipo: 'bahiana',
-    inicio: '15 de julho de 2026',
-    horario: 'Toda quarta-feira, às 20h',
+    mensalidades: 5,
+    primeiraParcela: '5 de julho de 2026',
+    ultimaParcela:  '5 de novembro de 2026',
     taxaAdesao: null,
     descricao: '',
     infos: [],
   },
-  uneb: {
-    nome: 'UNEB',
-    tipo: 'geral',
-    inicio: '28 de julho de 2026',
-    horario: 'Toda terça-feira, às 20h',
+  bahiana: {
+    nome: 'Bahiana (EBMSP)',
+    tipo: 'bahiana',
+    inicio: '5 de julho de 2026',
+    horario: 'Toda quarta-feira, às 20h',
+    mensalidades: 6,
+    primeiraParcela: '5 de julho de 2026',
+    ultimaParcela:  '5 de dezembro de 2026',
     taxaAdesao: null,
-    descricao:
-      'Preparação específica para o vestibular da Universidade do Estado da Bahia (UNEB), com foco ' +
-      'no formato redacional e nos critérios de correção da banca.',
-    infos: [
-      'Adequação ao modelo dissertativo da UNEB',
-      'Temas regionais e nacionais frequentes na banca',
-      'Estratégias para nota máxima no vestibular estadual',
-      'Análise de provas anteriores e padrões de correção',
-    ],
+    descricao: '',
+    infos: [],
   },
-  uesb: {
-    nome: 'UESB',
+  uneb_uesb: {
+    nome: 'UNEB & UESB',
     tipo: 'geral',
-    inicio: '28 de julho de 2026',
+    inicio: '5 de agosto de 2026',
     horario: 'Toda terça-feira, às 20h',
+    mensalidades: 6,
+    primeiraParcela: '5 de agosto de 2026',
+    ultimaParcela:  '5 de janeiro de 2027',
     taxaAdesao: null,
-    descricao:
-      'Preparação específica para o vestibular da Universidade Estadual do Sudoeste da Bahia (UESB), ' +
-      'com atenção às peculiaridades da banca avaliadora e ao modelo redacional exigido.',
-    infos: [
-      'Adequação ao modelo dissertativo da UESB',
-      'Temas característicos da banca sudoestina',
-      'Estratégias para estruturação e argumentação',
-      'Análise de provas anteriores e padrões de correção',
-    ],
+    prazoAdesao: '28 de julho de 2026',
+    descricao: '',
+    infos: [],
   },
 };
 
 /**
- * Combos: cada combo referencia as turmas simples que o compõem.
- * A regra de preço: integral da principal + 40% das demais.
+ * Combos: mensalidade integral da principal + 40% das demais.
  */
 const TURMAS_COMBO = {
-  enem_uneb: {
-    nome: 'ENEM + UNEB',
-    tipo: 'combo',
-    turmas: ['enem', 'uneb'],
-  },
-  enem_uesb: {
-    nome: 'ENEM + UESB',
-    tipo: 'combo',
-    turmas: ['enem', 'uesb'],
-  },
   enem_bahiana: {
-    nome: 'ENEM + Bahiana',
+    nome: 'ENEM + Bahiana (EBMSP)',
     tipo: 'combo',
     turmas: ['enem', 'bahiana'],
   },
-  bahiana_uneb: {
-    nome: 'Bahiana + UNEB',
-    tipo: 'combo',
-    turmas: ['bahiana', 'uneb'],
-  },
-  bahiana_uesb: {
-    nome: 'Bahiana + UESB',
-    tipo: 'combo',
-    turmas: ['bahiana', 'uesb'],
-  },
-  uneb_uesb: {
-    nome: 'UNEB + UESB',
-    tipo: 'combo',
-    turmas: ['uneb', 'uesb'],
-  },
   enem_uneb_uesb: {
-    nome: 'ENEM + UNEB + UESB',
+    nome: 'ENEM + UNEB & UESB',
     tipo: 'combo',
-    turmas: ['enem', 'uneb', 'uesb'],
-  },
-  enem_bahiana_uneb: {
-    nome: 'ENEM + Bahiana + UNEB',
-    tipo: 'combo',
-    turmas: ['enem', 'bahiana', 'uneb'],
-  },
-  enem_bahiana_uesb: {
-    nome: 'ENEM + Bahiana + UESB',
-    tipo: 'combo',
-    turmas: ['enem', 'bahiana', 'uesb'],
+    turmas: ['enem', 'uneb_uesb'],
   },
   bahiana_uneb_uesb: {
-    nome: 'Bahiana + UNEB + UESB',
+    nome: 'Bahiana (EBMSP) + UNEB & UESB',
     tipo: 'combo',
-    turmas: ['bahiana', 'uneb', 'uesb'],
+    turmas: ['bahiana', 'uneb_uesb'],
   },
   enem_bahiana_uneb_uesb: {
-    nome: 'ENEM + Bahiana + UNEB + UESB',
+    nome: 'ENEM + Bahiana (EBMSP) + UNEB & UESB',
     tipo: 'combo',
-    turmas: ['enem', 'bahiana', 'uneb', 'uesb'],
+    turmas: ['enem', 'bahiana', 'uneb_uesb'],
   },
 };
 
@@ -261,12 +205,17 @@ function renderPanelSingle(panel, turmaId, planoTipo) {
       <ul style="padding:0;margin:0;display:flex;flex-direction:column;gap:6px;">
         <li style="display:flex;align-items:flex-start;gap:8px;list-style:none;font-size:0.8rem;color:#4B5563;line-height:1.4;">
           <img src="${ICON_CHECK}" alt="" aria-hidden="true" style="width:16px;height:16px;flex-shrink:0;margin-top:2px;" />
-          Taxa de adesão (alunos do 1º sem. de 2026 estão isentos)
+          <strong>${turma.mensalidades} mensalidades</strong>&nbsp;— de ${turma.primeiraParcela} a ${turma.ultimaParcela}
         </li>
+        ${turma.prazoAdesao ? `
+        <li style="display:flex;align-items:flex-start;gap:8px;list-style:none;font-size:0.8rem;color:#92400E;background:#FFF7ED;border-radius:6px;padding:6px 8px;line-height:1.4;">
+          <img src="${ICON_CHECK}" alt="" aria-hidden="true" style="width:16px;height:16px;flex-shrink:0;margin-top:2px;" />
+          Taxa de adesão até <strong>${turma.prazoAdesao}</strong> para garantir a vaga
+        </li>` : `
         <li style="display:flex;align-items:flex-start;gap:8px;list-style:none;font-size:0.8rem;color:#4B5563;line-height:1.4;">
           <img src="${ICON_CHECK}" alt="" aria-hidden="true" style="width:16px;height:16px;flex-shrink:0;margin-top:2px;" />
-          5 a 7 mensalidades, conforme o objetivo da turma
-        </li>
+          Taxa de adesão (alunos do 1º sem. de 2026 estão isentos)
+        </li>`}
         <li style="display:flex;align-items:flex-start;gap:8px;list-style:none;font-size:0.8rem;color:#4B5563;line-height:1.4;">
           <img src="${ICON_CHECK}" alt="" aria-hidden="true" style="width:16px;height:16px;flex-shrink:0;margin-top:2px;" />
           Cancelamento com 30 dias de antecedência
