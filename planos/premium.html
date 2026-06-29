@@ -191,6 +191,44 @@
             <small class="hint" aria-live="polite"> </small>
           </div>
 
+          <!-- Endereço -->
+          <div class="field">
+            <label class="label" for="endereco">
+              Endereço <span class="req" aria-hidden="true">*</span>
+            </label>
+            <div class="control">
+              <i class="fa-solid fa-location-dot icon" aria-hidden="true"></i>
+              <input id="endereco" name="endereco" type="text" class="input"
+                placeholder="Rua, Avenida, etc." autocomplete="street-address"
+                aria-required="true" required />
+            </div>
+            <small class="hint" aria-live="polite"> </small>
+          </div>
+
+          <!-- Número + Complemento -->
+          <div class="field span-5">
+            <label class="label" for="numero">
+              Número <span class="req" aria-hidden="true">*</span>
+            </label>
+            <div class="control">
+              <i class="fa-solid fa-hashtag icon" aria-hidden="true"></i>
+              <input id="numero" name="numero" type="text" class="input"
+                placeholder="Ex: 123" autocomplete="address-line2" inputmode="numeric"
+                aria-required="true" required />
+            </div>
+            <small class="hint" aria-live="polite"> </small>
+          </div>
+
+          <div class="field span-7">
+            <label class="label" for="complemento">Complemento</label>
+            <div class="control">
+              <i class="fa-regular fa-comment-dots icon" aria-hidden="true"></i>
+              <input id="complemento" name="complemento" type="text" class="input"
+                placeholder="Apto, Bloco, etc." autocomplete="address-line3" />
+            </div>
+            <small class="hint" aria-live="polite"> </small>
+          </div>
+
           <!-- Indicação -->
           <div class="field">
             <label class="label" for="partnerReferral">

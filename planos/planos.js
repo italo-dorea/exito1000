@@ -49,6 +49,7 @@ const TURMAS_SIMPLES = {
     ultimaParcela:  '5 de janeiro de 2027',
     taxaAdesao: null,
     prazoAdesao: '28 de julho de 2026',
+    semKit: true,
     descricao: '',
     infos: [],
   },
@@ -175,7 +176,13 @@ function renderPanelSingle(panel, turmaId, planoTipo) {
 
   const planChipClass = planoTipo === 'diamante' ? 'plan-type-chip--diamante' : 'plan-type-chip--premium';
   const planChipIcon = planoTipo === 'diamante' ? 'fa-gem' : 'fa-star';
-  const beneficios = PLANOS_BENEFICIOS[planoTipo] || [];
+
+  // Para UNEB & UESB: substitui item de kit físico por material virtual
+  const KIT_ITEM = 'Kit de materiais físicos entregue na sua casa';
+  const KIT_SUBSTITUTO = 'Material de apoio virtual toda semana';
+  const beneficios = (PLANOS_BENEFICIOS[planoTipo] || []).map(b =>
+    turma.semKit && b === KIT_ITEM ? KIT_SUBSTITUTO : b
+  );
 
   panel.innerHTML = `
     <div class="panel-header">
@@ -486,27 +493,30 @@ async function handleSubmit(e, planoTipo, getSelectedTurmaId) {
       return el?.options[el?.selectedIndex]?.text || el?.value || '';
     };
 
-    // Monta payload com títulos em português
+    // Monta payload na ordem exata das colunas da planilha
     const payload = new FormData();
-    payload.append('Plano',               planoTipo === 'diamante' ? 'Diamante' : 'Premium');
-    payload.append('Turma',               turmaNome);
-    payload.append('Multi-turma',         isCombo ? 'Sim — mensalidade principal + 40% das adicionais' : 'Não');
-    payload.append('Nome Completo',       g('nomeCompleto'));
-    payload.append('E-mail',              g('email'));
-    payload.append('CPF',                 g('cpf'));
-    payload.append('Telefone / WhatsApp', g('telefone'));
-    payload.append('CEP',                 g('cep'));
-    payload.append('Estado',              gSelectText('state'));
-    payload.append('Cidade',              gSelectText('city'));
-    payload.append('Indicação de Parceiro', gSelectText('partnerReferral'));
-    payload.append('Forma de Pagamento',  'Boleto Bancário');
-    payload.append('Termos Aceitos',      document.getElementById('terms')?.checked ? 'Sim' : 'Não');
-    payload.append('Data / Hora',         new Date().toLocaleString('pt-BR', { timeZone: 'America/Bahia' }));
+    payload.append('Data / Hora',            new Date().toLocaleString('pt-BR', { timeZone: 'America/Bahia' }));
+    payload.append('Plano Escolhido',         planoTipo === 'diamante' ? 'Diamante' : 'Premium');
+    payload.append('Nome Completo',           g('nomeCompleto'));
+    payload.append('E-mail',                  g('email'));
+    payload.append('CPF',                     g('cpf'));
+    payload.append('Telefone / WhatsApp',     g('telefone'));
+    payload.append('CEP',                     g('cep'));
+    payload.append('Estado',                  gSelectText('state'));
+    payload.append('Endereço',               g('endereco'));
+    payload.append('Número',                  g('numero'));
+    payload.append('Complemento',             g('complemento'));
+    payload.append('Indicação de Parceiro',  gSelectText('partnerReferral'));
+    payload.append('Aceitou os Termos',       document.getElementById('terms')?.checked ? 'Sim' : 'Não');
+    // Campos adicionais (após aceite)
+    payload.append('Turma Escolhida',         turmaNome);
+    payload.append('Multi-turma',             isCombo ? 'Sim — mensalidade principal + 40% das adicionais' : 'Não');
+    payload.append('Forma de Pagamento',      'Boleto Bancário');
 
-    // Informações extras da turma (horário e início)
+    // Informações extras da turma
     if (!isCombo && turmaData) {
-      payload.append('Horário da Turma',  turmaData.horario  || '');
-      payload.append('Início da Turma',   turmaData.inicio   || '');
+      payload.append('Horário da Turma', turmaData.horario || '');
+      payload.append('Início da Turma',  turmaData.inicio  || '');
     } else if (isCombo && turmaData) {
       const turmasNomes = TURMAS_COMBO[turmaId]?.turmas
         ?.map(id => TURMAS_SIMPLES[id]?.nome || id)
