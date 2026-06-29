@@ -169,8 +169,8 @@
             <small class="hint" aria-live="polite"> </small>
           </div>
 
-          <!-- CEP -->
-          <div class="field span-5">
+          <!-- CEP + Estado + Cidade — mesma linha -->
+          <div class="field span-3">
             <label class="label" for="cep">
               CEP <span class="req" aria-hidden="true">*</span>
             </label>
@@ -183,8 +183,7 @@
             <small class="hint" aria-live="polite"> </small>
           </div>
 
-          <!-- Estado -->
-          <div class="field span-7">
+          <div class="field span-4">
             <label class="label" for="state">
               Estado <span class="req" aria-hidden="true">*</span>
             </label>
@@ -198,8 +197,7 @@
             <small class="hint" aria-live="polite"> </small>
           </div>
 
-          <!-- Cidade -->
-          <div class="field">
+          <div class="field span-5">
             <label class="label" for="city">
               Cidade <span class="req" aria-hidden="true">*</span>
             </label>
@@ -213,8 +211,8 @@
             <small class="hint" aria-live="polite"> </small>
           </div>
 
-          <!-- Endereço -->
-          <div class="field">
+          <!-- Endereço + Número + Complemento — mesma linha -->
+          <div class="field span-7">
             <label class="label" for="endereco">
               Endereço <span class="req" aria-hidden="true">*</span>
             </label>
@@ -227,26 +225,25 @@
             <small class="hint" aria-live="polite"> </small>
           </div>
 
-          <!-- Número + Complemento -->
-          <div class="field span-4">
+          <div class="field span-2">
             <label class="label" for="numero">
               Número <span class="req" aria-hidden="true">*</span>
             </label>
             <div class="control">
               <i class="fa-solid fa-hashtag icon" aria-hidden="true"></i>
               <input id="numero" name="numero" type="text" class="input"
-                placeholder="Ex: 123" autocomplete="address-line2" inputmode="numeric"
+                placeholder="123" autocomplete="address-line2" inputmode="numeric"
                 aria-required="true" required />
             </div>
             <small class="hint" aria-live="polite"> </small>
           </div>
 
-          <div class="field span-8">
+          <div class="field span-3">
             <label class="label" for="complemento">Complemento</label>
             <div class="control">
               <i class="fa-regular fa-comment-dots icon" aria-hidden="true"></i>
               <input id="complemento" name="complemento" type="text" class="input"
-                placeholder="Apto, Bloco, Casa..." autocomplete="address-line3" />
+                placeholder="Apto, Bloco..." autocomplete="address-line3" />
             </div>
             <small class="hint" aria-live="polite"> </small>
           </div>

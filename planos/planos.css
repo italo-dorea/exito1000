@@ -259,14 +259,22 @@
 }
 
 .field { grid-column: span 12; }
+.field.span-2 { grid-column: span 2; }
+.field.span-3 { grid-column: span 3; }
+.field.span-4 { grid-column: span 4; }
 .field.span-5 { grid-column: span 5; }
 .field.span-6 { grid-column: span 6; }
 .field.span-7 { grid-column: span 7; }
+.field.span-8 { grid-column: span 8; }
 
 @media (max-width: 640px) {
+  .field.span-2,
+  .field.span-3,
+  .field.span-4,
   .field.span-5,
   .field.span-6,
-  .field.span-7 { grid-column: span 12; }
+  .field.span-7,
+  .field.span-8 { grid-column: span 12; }
 }
 
 .label {
